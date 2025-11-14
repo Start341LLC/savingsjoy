@@ -18,7 +18,10 @@ export default function DomainCard({ domain }: DomainCardProps) {
         </div>
       )}
       <CardHeader className="pb-3">
-        <h3 className="text-xl font-bold font-display text-foreground leading-tight" data-testid={`text-domain-name-${domain.name}`}>
+        <h3
+          className="text-xl font-bold font-display text-foreground leading-tight break-words"
+          data-testid={`text-domain-name-${domain.name}`}
+        >
           {domain.name}
         </h3>
       </CardHeader>
