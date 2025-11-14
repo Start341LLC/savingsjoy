@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { AffiliateOffer } from "@shared/schema";
 
 interface VerticalCardProps {
@@ -5,14 +6,32 @@ interface VerticalCardProps {
 }
 
 export default function VerticalCard({ offer }: VerticalCardProps) {
-  const handleClick = () => {
-    // Track click event with Google Analytics
-    if (typeof window !== "undefined" && (window as any).gtag) {
+  const handleAffiliateClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    if (typeof window === "undefined") return;
+
+    if ((window as any).gtag) {
       (window as any).gtag("event", "affiliate_click", {
         event_category: "Affiliate",
         event_label: offer.companyName,
         value: offer.id,
       });
+    }
+
+    const popupFeatures = "width=1280,height=720,menubar=no,toolbar=no,location=no,status=no";
+    const popupName = `affiliate-${offer.id}-${Date.now()}`;
+    const popupWindow = window.open(
+      offer.affiliateLink,
+      popupName,
+      popupFeatures,
+    );
+
+    if (popupWindow) {
+      popupWindow.opener = null;
+      popupWindow.focus();
+    } else {
+      window.location.href = offer.affiliateLink;
     }
   };
 
@@ -28,9 +47,8 @@ export default function VerticalCard({ offer }: VerticalCardProps) {
       {/* Title - Google blue link */}
       <a
         href={offer.affiliateLink}
-        target="_blank"
         rel="nofollow noopener noreferrer"
-        onClick={handleClick}
+        onClick={handleAffiliateClick}
         className="text-xl text-[#1a0dab] dark:text-[#8ab4f8] hover:underline font-normal leading-tight block mb-1"
         data-testid={`link-offer-${offer.id}`}
       >
