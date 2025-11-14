@@ -33,15 +33,15 @@ export default function Footer() {
             <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/contact">
-                  <div 
-                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer" 
+                <a href="mailto:support@start341.com">
+                  <div
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                     data-testid="footer-link-contact"
                     onClick={() => trackFooterLink('Contact')}
                   >
                     Contact Us
                   </div>
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="/privacy-policy">
