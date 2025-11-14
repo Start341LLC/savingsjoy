@@ -58,7 +58,7 @@ export default function Header() {
             ))}
 
             {/* Contact Us Button */}
-            <Link href="/contact">
+            <a href="mailto:support@start341.com">
               <Button
                 data-testid="button-contact-us"
                 variant="default"
@@ -67,7 +67,7 @@ export default function Header() {
               >
                 Contact Us
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -113,7 +113,7 @@ export default function Header() {
               ))}
 
               {/* Contact */}
-              <Link href="/contact">
+              <a href="mailto:support@start341.com">
                 <div
                   data-testid="link-mobile-contact"
                   className="block py-2.5 px-3 text-base font-medium text-primary hover-elevate rounded-md cursor-pointer"
@@ -121,7 +121,7 @@ export default function Header() {
                 >
                   Contact Us
                 </div>
-              </Link>
+              </a>
             </div>
           </div>
         )}
