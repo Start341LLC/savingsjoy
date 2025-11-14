@@ -20,9 +20,9 @@ export default function Header() {
   return (
     <header className="bg-white border-b border-border sticky top-0 z-50 shadow-sm">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 justify-between items-center">
+        <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center flex-shrink-0">
             <Link href="/">
               <div className="flex items-center gap-2 cursor-pointer" data-testid="link-home">
                 <img src={pigMascot} alt="SavingsJoy mascot" className="h-10 w-10" />
@@ -34,7 +34,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-3">
+          <div className="hidden lg:flex flex-1 items-center justify-evenly ml-8">
             {/* Home Link */}
             <Link href="/">
               <div
@@ -58,7 +58,7 @@ export default function Header() {
             ))}
 
             {/* Contact Us Button */}
-            <a href="mailto:support@start341.com">
+            <a href="mailto:support@start341.com" className="flex justify-center">
               <Button
                 data-testid="button-contact-us"
                 variant="default"
