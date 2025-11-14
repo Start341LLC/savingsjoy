@@ -1,0 +1,305 @@
+import { Vertical } from "@shared/schema";
+
+export const verticals: Vertical[] = [
+  {
+    slug: "realestate",
+    title: "Real Estate Savings & Deals",
+    description: "Compare top real estate services, find the best mortgage rates, and discover property deals.",
+    metaDescription: "Find the best real estate deals, mortgage rates, and property services. Compare top providers and save on your next home purchase.",
+    offers: [
+      {
+        id: "re-1",
+        companyName: "Zillow",
+        logoUrl: "https://logo.clearbit.com/zillow.com",
+        title: "Zillow - Find Your Dream Home",
+        description: "Search millions of homes for sale and rent. Get home values, compare neighborhoods, and connect with local real estate agents.",
+        displayUrl: "zillow.com",
+        affiliateLink: "https://www.zillow.com",
+        rating: 4.5,
+        features: ["Millions of listings", "Home value estimates", "Local market data"]
+      },
+      {
+        id: "re-2",
+        companyName: "Realtor.com",
+        logoUrl: "https://logo.clearbit.com/realtor.com",
+        title: "Realtor.com - Real Estate Listings & Homes For Sale",
+        description: "Find homes for sale, rental properties, and real estate market trends. Connect with verified real estate professionals.",
+        displayUrl: "realtor.com",
+        affiliateLink: "https://www.realtor.com",
+        rating: 4.3,
+        features: ["Verified listings", "Market insights", "Agent directory"]
+      },
+      {
+        id: "re-3",
+        companyName: "Redfin",
+        logoUrl: "https://logo.clearbit.com/redfin.com",
+        title: "Redfin - Buy & Sell Real Estate",
+        description: "Low-commission real estate brokerage with full-service agents. Save thousands on listing fees.",
+        displayUrl: "redfin.com",
+        affiliateLink: "https://www.redfin.com",
+        rating: 4.6,
+        features: ["Low commission rates", "Full-service agents", "Free home tours"]
+      },
+      {
+        id: "re-4",
+        companyName: "Trulia",
+        logoUrl: "https://logo.clearbit.com/trulia.com",
+        title: "Trulia - Homes for Sale & Real Estate",
+        description: "Discover homes for sale with detailed neighborhood insights, school ratings, and local amenities.",
+        displayUrl: "trulia.com",
+        affiliateLink: "https://www.trulia.com",
+        rating: 4.2,
+        features: ["Neighborhood insights", "School ratings", "Crime maps"]
+      },
+    ]
+  },
+  {
+    slug: "insurance",
+    title: "Insurance Comparison & Quotes",
+    description: "Compare insurance rates from top providers. Find the best coverage for auto, home, health, and life insurance.",
+    metaDescription: "Compare insurance quotes from leading providers. Save on auto, home, health, and life insurance with our easy comparison tools.",
+    offers: [
+      {
+        id: "ins-1",
+        companyName: "Progressive",
+        logoUrl: "https://logo.clearbit.com/progressive.com",
+        title: "Progressive - Auto Insurance Quotes",
+        description: "Get a free auto insurance quote in minutes. Compare rates and find discounts on car insurance coverage.",
+        displayUrl: "progressive.com",
+        affiliateLink: "https://www.progressive.com",
+        rating: 4.2,
+        features: ["Quick quotes", "Multiple discounts", "Name Your Price tool"]
+      },
+      {
+        id: "ins-2",
+        companyName: "GEICO",
+        logoUrl: "https://logo.clearbit.com/geico.com",
+        title: "GEICO - 15 Minutes Could Save You 15% or More",
+        description: "Fast, easy quotes for car insurance. Bundle and save with home and renters insurance.",
+        displayUrl: "geico.com",
+        affiliateLink: "https://www.geico.com",
+        rating: 4.4,
+        features: ["Quick online quotes", "Bundle discounts", "24/7 customer service"]
+      },
+      {
+        id: "ins-3",
+        companyName: "State Farm",
+        logoUrl: "https://logo.clearbit.com/statefarm.com",
+        title: "State Farm - Get Auto Insurance Quotes",
+        description: "Trusted insurance provider with local agents. Get personalized auto, home, and life insurance coverage.",
+        displayUrl: "statefarm.com",
+        affiliateLink: "https://www.statefarm.com",
+        rating: 4.3,
+        features: ["Local agents", "Multiple policy discounts", "Claims assistance"]
+      },
+      {
+        id: "ins-4",
+        companyName: "Allstate",
+        logoUrl: "https://logo.clearbit.com/allstate.com",
+        title: "Allstate - You're In Good Hands",
+        description: "Comprehensive insurance coverage with accident forgiveness and new car replacement.",
+        displayUrl: "allstate.com",
+        affiliateLink: "https://www.allstate.com",
+        rating: 4.1,
+        features: ["Accident forgiveness", "New car replacement", "Safe driving rewards"]
+      },
+      {
+        id: "ins-5",
+        companyName: "Liberty Mutual",
+        logoUrl: "https://logo.clearbit.com/libertymutual.com",
+        title: "Liberty Mutual - Customized Insurance Coverage",
+        description: "Personalized insurance policies tailored to your needs. Save with bundling discounts.",
+        displayUrl: "libertymutual.com",
+        affiliateLink: "https://www.libertymutual.com",
+        rating: 4.0,
+        features: ["Customized coverage", "Bundle savings", "Accident forgiveness"]
+      },
+    ]
+  },
+  {
+    slug: "taxes",
+    title: "Tax Preparation & Filing Services",
+    description: "Find the best tax software and services. File your taxes online with confidence and maximize your refund.",
+    metaDescription: "Compare top tax preparation software and services. File your taxes accurately and get your maximum refund.",
+    offers: [
+      {
+        id: "tax-1",
+        companyName: "TurboTax",
+        logoUrl: "https://logo.clearbit.com/turbotax.intuit.com",
+        title: "TurboTax - File Your Taxes Online",
+        description: "America's #1 tax preparation software. Easy step-by-step guidance, maximum refund guarantee, and free audit support.",
+        displayUrl: "turbotax.intuit.com",
+        affiliateLink: "https://turbotax.intuit.com",
+        rating: 4.6,
+        features: ["Max refund guarantee", "Audit support", "Expert help available"]
+      },
+      {
+        id: "tax-2",
+        companyName: "H&R Block",
+        logoUrl: "https://logo.clearbit.com/hrblock.com",
+        title: "H&R Block - Tax Preparation & Filing",
+        description: "File online or visit a local office. Get help from tax professionals and maximize your refund.",
+        displayUrl: "hrblock.com",
+        affiliateLink: "https://www.hrblock.com",
+        rating: 4.4,
+        features: ["In-person assistance", "Tax professional review", "Refund advance"]
+      },
+      {
+        id: "tax-3",
+        companyName: "TaxAct",
+        logoUrl: "https://logo.clearbit.com/taxact.com",
+        title: "TaxAct - Affordable Tax Filing Software",
+        description: "Budget-friendly tax software with comprehensive features. Free federal filing options available.",
+        displayUrl: "taxact.com",
+        affiliateLink: "https://www.taxact.com",
+        rating: 4.3,
+        features: ["Affordable pricing", "Free options", "Maximum refund guarantee"]
+      },
+      {
+        id: "tax-4",
+        companyName: "FreeTaxUSA",
+        logoUrl: "https://logo.clearbit.com/freetaxusa.com",
+        title: "FreeTaxUSA - Free Federal Tax Filing",
+        description: "Completely free federal tax filing with optional state filing. Simple, secure, and accurate.",
+        displayUrl: "freetaxusa.com",
+        affiliateLink: "https://www.freetaxusa.com",
+        rating: 4.5,
+        features: ["Free federal filing", "Low-cost state filing", "Easy to use"]
+      },
+      {
+        id: "tax-5",
+        companyName: "Credit Karma Tax",
+        logoUrl: "https://logo.clearbit.com/creditkarma.com",
+        title: "Credit Karma Tax - 100% Free Tax Filing",
+        description: "Completely free federal and state tax filing. No hidden fees, no upgrades required.",
+        displayUrl: "creditkarma.com/tax",
+        affiliateLink: "https://www.creditkarma.com/tax",
+        rating: 4.4,
+        features: ["100% free", "Federal and state", "No hidden fees"]
+      },
+    ]
+  },
+  {
+    slug: "creditcards",
+    title: "Credit Card Offers & Comparisons",
+    description: "Compare credit cards, find rewards programs, and discover the best rates for your financial goals.",
+    metaDescription: "Compare top credit card offers. Find the best rewards, cash back, and low-interest cards for your needs.",
+    offers: [
+      {
+        id: "cc-1",
+        companyName: "Chase",
+        logoUrl: "https://logo.clearbit.com/chase.com",
+        title: "Chase Sapphire Preferred - Travel Rewards Card",
+        description: "Earn 2X points on travel and dining. Redeem for travel through Chase Ultimate Rewards.",
+        displayUrl: "chase.com",
+        affiliateLink: "https://www.chase.com",
+        rating: 4.7,
+        features: ["2X travel & dining", "Transfer to partners", "Trip protections"]
+      },
+      {
+        id: "cc-2",
+        companyName: "American Express",
+        logoUrl: "https://logo.clearbit.com/americanexpress.com",
+        title: "American Express Gold Card - Dining & Groceries",
+        description: "Earn 4X points at restaurants and U.S. supermarkets. Premium dining benefits included.",
+        displayUrl: "americanexpress.com",
+        affiliateLink: "https://www.americanexpress.com",
+        rating: 4.6,
+        features: ["4X dining & groceries", "Annual dining credits", "No foreign fees"]
+      },
+      {
+        id: "cc-3",
+        companyName: "Capital One",
+        logoUrl: "https://logo.clearbit.com/capitalone.com",
+        title: "Capital One Venture - Unlimited 2X Miles",
+        description: "Earn unlimited 2X miles on every purchase. Redeem for any travel or transfer to partners.",
+        displayUrl: "capitalone.com",
+        affiliateLink: "https://www.capitalone.com",
+        rating: 4.5,
+        features: ["2X on everything", "Flexible redemption", "No foreign fees"]
+      },
+    ]
+  },
+  {
+    slug: "loans",
+    title: "Personal Loan Rates & Offers",
+    description: "Compare personal loan rates from top lenders. Find competitive rates for debt consolidation, home improvement, and more.",
+    metaDescription: "Compare personal loan rates and find the best offers for your needs. Quick approval and competitive rates.",
+    offers: [
+      {
+        id: "loan-1",
+        companyName: "SoFi",
+        logoUrl: "https://logo.clearbit.com/sofi.com",
+        title: "SoFi Personal Loans - Low Rates, No Fees",
+        description: "Competitive rates with no origination fees. Unemployment protection and career coaching included.",
+        displayUrl: "sofi.com",
+        affiliateLink: "https://www.sofi.com",
+        rating: 4.6,
+        features: ["No origination fees", "Unemployment protection", "Rate discounts"]
+      },
+      {
+        id: "loan-2",
+        companyName: "LendingClub",
+        logoUrl: "https://logo.clearbit.com/lendingclub.com",
+        title: "LendingClub - Personal Loans Up to $40K",
+        description: "Fixed-rate personal loans for debt consolidation, home improvement, and major purchases.",
+        displayUrl: "lendingclub.com",
+        affiliateLink: "https://www.lendingclub.com",
+        rating: 4.3,
+        features: ["Quick approval", "Fixed rates", "No prepayment penalty"]
+      },
+      {
+        id: "loan-3",
+        companyName: "Marcus by Goldman Sachs",
+        logoUrl: "https://logo.clearbit.com/marcus.com",
+        title: "Marcus Personal Loans - No Fees",
+        description: "Simple personal loans with no fees. Flexible payment dates and free financial tools.",
+        displayUrl: "marcus.com",
+        affiliateLink: "https://www.marcus.com",
+        rating: 4.5,
+        features: ["No fees", "Flexible payments", "Rate matching"]
+      },
+    ]
+  },
+  {
+    slug: "mortgage",
+    title: "Mortgage Rates & Home Loans",
+    description: "Compare current mortgage rates, refinancing options, and home loan programs from top lenders.",
+    metaDescription: "Find the best mortgage rates and home loan options. Compare lenders and calculate your monthly payments.",
+    offers: [
+      {
+        id: "mtg-1",
+        companyName: "Rocket Mortgage",
+        logoUrl: "https://logo.clearbit.com/rocketmortgage.com",
+        title: "Rocket Mortgage - Get Approved in Minutes",
+        description: "America's largest mortgage lender. Fast online approval with personalized rates and expert support.",
+        displayUrl: "rocketmortgage.com",
+        affiliateLink: "https://www.rocketmortgage.com",
+        rating: 4.5,
+        features: ["Quick approval", "Online process", "Rate lock guarantee"]
+      },
+      {
+        id: "mtg-2",
+        companyName: "Better.com",
+        logoUrl: "https://logo.clearbit.com/better.com",
+        title: "Better.com - Digital Mortgage Lender",
+        description: "100% online mortgage lender with low rates and fees. Get pre-approved in 3 minutes.",
+        displayUrl: "better.com",
+        affiliateLink: "https://www.better.com",
+        rating: 4.4,
+        features: ["Low fees", "3-min pre-approval", "Digital closing"]
+      },
+      {
+        id: "mtg-3",
+        companyName: "LoanDepot",
+        logoUrl: "https://logo.clearbit.com/loandepot.com",
+        title: "LoanDepot - Home Loans & Refinancing",
+        description: "Comprehensive mortgage solutions with competitive rates. Purchase and refinance options available.",
+        displayUrl: "loandepot.com",
+        affiliateLink: "https://www.loandepot.com",
+        rating: 4.2,
+        features: ["Competitive rates", "Multiple loan types", "Local support"]
+      },
+    ]
+  },
+];
