@@ -18,6 +18,11 @@ export default function LinkButton({ href, children, trackLabel, ...props }: Lin
       trackEvent('navigation', 'Button Click', trackLabel);
     }
     setLocation(href);
+
+    // Ensure we land at the top of the destination page
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
