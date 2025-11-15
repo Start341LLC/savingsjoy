@@ -8,6 +8,6 @@ export const siteConfig: SiteConfig = {
   email: "support@start341.com",
   googleAnalytics: "G-G33CYW2XXV",
   facebookPixel: "",
-  company: "Start341",
+  company: "Start341.com LLC",
   companyUrl: "https://start341.com",
 };
