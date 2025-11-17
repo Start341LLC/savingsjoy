@@ -9,6 +9,26 @@ declare module 'http' {
     rawBody: unknown
   }
 }
+// Redirect www subdomain traffic to the root domain so that
+// https://www.savingsjoy.com/realestate loads the same SPA route as
+// https://savingsjoy.com/realestate.
+app.use((req, res, next) => {
+  const host = req.headers.host;
+
+  if (host?.startsWith("www.")) {
+    const protocolHeader = req.headers["x-forwarded-proto"];
+    const protocol = Array.isArray(protocolHeader)
+      ? protocolHeader[0]
+      : protocolHeader?.split(",")[0] || req.protocol;
+    const targetHost = host.slice(4);
+    const redirectUrl = `${protocol}://${targetHost}${req.originalUrl}`;
+
+    return res.redirect(301, redirectUrl);
+  }
+
+  next();
+});
+
 app.use(express.json({
   verify: (req, _res, buf) => {
     req.rawBody = buf;
