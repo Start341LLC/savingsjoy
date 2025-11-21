@@ -9,19 +9,27 @@ declare module 'http' {
     rawBody: unknown
   }
 }
-// Redirect www subdomain traffic to the root domain so that
-// https://www.savingsjoy.com/realestate loads the same SPA route as
-// https://savingsjoy.com/realestate.
-app.use((req, res, next) => {
-  const host = req.headers.host;
+// Optionally redirect traffic to a canonical host when specified.
+// Defaults to serving whatever host is requested so www subdomains still work
+// even if the apex domain is not configured.
+const canonicalHost = process.env.CANONICAL_HOST?.toLowerCase();
 
-  if (host?.startsWith("www.")) {
+app.use((req, res, next) => {
+  if (!canonicalHost) {
+    return next();
+  }
+
+  const host = req.headers.host?.toLowerCase();
+  if (!host || host === canonicalHost) {
+    return next();
+  }
+
+  if (host === `www.${canonicalHost}`) {
     const protocolHeader = req.headers["x-forwarded-proto"];
     const protocol = Array.isArray(protocolHeader)
       ? protocolHeader[0]
       : protocolHeader?.split(",")[0] || req.protocol;
-    const targetHost = host.slice(4);
-    const redirectUrl = `${protocol}://${targetHost}${req.originalUrl}`;
+    const redirectUrl = `${protocol}://${canonicalHost}${req.originalUrl}`;
 
     return res.redirect(301, redirectUrl);
   }
