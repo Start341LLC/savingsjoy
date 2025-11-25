@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { siteConfig } from "@/config/site";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { PiggyLogo } from "@/components/Logo";
+import pigMascot from "@assets/generated_images/Pink_pig_mascot_logo_5c51842d.png";
 import { Button } from "@/components/ui/button";
 
 export default function Header() {
@@ -25,7 +25,7 @@ export default function Header() {
           <div className="flex items-center flex-shrink-0">
             <Link href="/">
               <div className="flex items-center gap-2 cursor-pointer" data-testid="link-home">
-                <PiggyLogo size="sm" />
+                <img src={pigMascot} alt="SavingsJoy mascot" className="h-10 w-10" />
                 <span className="text-xl font-bold font-display text-primary">
                   {siteConfig.name}
                 </span>
