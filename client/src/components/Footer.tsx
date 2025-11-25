@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { siteConfig } from "@/config/site";
-import pigMascot from "@assets/generated_images/Pink_pig_mascot_logo_5c51842d.png";
 import { trackEvent } from "@/lib/analytics";
+import { PiggyLogo } from "@/components/Logo";
 
 const trackFooterLink = (label: string) => {
   trackEvent('footer_click', 'Footer Navigation', label);
@@ -17,7 +17,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src={pigMascot} alt="SavingsJoy mascot" className="h-12 w-12" />
+              <PiggyLogo />
               <span className="text-xl font-bold font-display text-primary">
                 {siteConfig.name}
               </span>
