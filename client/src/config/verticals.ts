@@ -22,15 +22,16 @@ export const verticals: Vertical[] = [
       },
       {
         id: "re-2",
-        companyName: "Realtor.com",
-        logoUrl: "https://logo.clearbit.com/realtor.com",
-        title: "Realtor.com - Real Estate Listings & Homes For Sale",
+        companyName: "Liz Buys Houses",
+        logoUrl: "https://logo.clearbit.com/lizbuyshouses.net",
+        title: "Liz Buys Houses - Sell Fast for Cash",
         description:
-          "Find homes for sale, rental properties, and real estate market trends. Connect with verified real estate professionals.",
-        displayUrl: "realtor.com",
-        affiliateLink: "https://www.realtor.com",
+          "Get a fair cash offer for your house in days. Skip repairs, agent fees, and lengthy listings with a quick closing timeline.",
+        displayUrl: "lizbuyshouses.net",
+        affiliateLink:
+          "https://afflat3e3.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=26854&c=918271&a=747832&k=C739C6E9CC82811120A9B8F0B8A12356&l=28630&s1=redirect",
         rating: 4.3,
-        features: ["Verified listings", "Market insights", "Agent directory"],
+        features: ["Cash offers in days", "No repairs needed", "Close on your timeline"],
       },
       {
         id: "re-3",
