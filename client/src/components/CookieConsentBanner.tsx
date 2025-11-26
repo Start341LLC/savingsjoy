@@ -1,106 +1,168 @@
-import { useState } from "react";
-import { ShieldCheck } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { cn } from "@/lib/utils";
+import { useEffect, useMemo, useState } from "react";
 
 interface CookieConsentBannerProps {
-  onAcceptAll: () => void;
-  onSavePreferences: (preferences: { analytics: boolean; marketing: boolean }) => void;
-  className?: string;
-  initialPreferences?: { analytics: boolean; marketing: boolean };
+  onAnalyticsAllowed: () => void;
 }
 
-export function CookieConsentBanner({
-  onAcceptAll,
-  onSavePreferences,
-  className,
-  initialPreferences,
-}: CookieConsentBannerProps) {
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(initialPreferences?.analytics ?? true);
-  const [marketingEnabled, setMarketingEnabled] = useState(initialPreferences?.marketing ?? true);
+const CONSENT_KEY = "cookieConsent";
 
-  const handleSave = () => {
-    onSavePreferences({ analytics: analyticsEnabled, marketing: marketingEnabled });
+function readStoredConsent() {
+  try {
+    return window.localStorage.getItem(CONSENT_KEY);
+  } catch (error) {
+    console.warn("Could not read cookie preference", error);
+    return null;
+  }
+}
+
+function writeStoredConsent(value: string) {
+  try {
+    window.localStorage.setItem(CONSENT_KEY, value);
+  } catch (error) {
+    console.warn("Could not save cookie preference", error);
+  }
+}
+
+export function CookieConsentBanner({ onAnalyticsAllowed }: CookieConsentBannerProps) {
+  const [isMounted, setIsMounted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [showPreferences, setShowPreferences] = useState(false);
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(true);
+
+  const shouldShowBanner = useMemo(() => {
+    const stored = readStoredConsent();
+    return !stored;
+  }, []);
+
+  useEffect(() => {
+    const storedConsent = readStoredConsent();
+    if (storedConsent === "accepted" || storedConsent === "analytics") {
+      onAnalyticsAllowed();
+      setAnalyticsEnabled(true);
+      return;
+    }
+
+    if (storedConsent === "necessary-only" || storedConsent === "rejected") {
+      setAnalyticsEnabled(false);
+      return;
+    }
+
+    if (shouldShowBanner) {
+      setIsMounted(true);
+      requestAnimationFrame(() => setIsVisible(true));
+    }
+  }, [onAnalyticsAllowed, shouldShowBanner]);
+
+  const hideBanner = () => {
+    setIsVisible(false);
+    window.setTimeout(() => setIsMounted(false), 300);
   };
 
+  const handleAcceptAll = () => {
+    writeStoredConsent("accepted");
+    onAnalyticsAllowed();
+    hideBanner();
+  };
+
+  const handleRejectAll = () => {
+    writeStoredConsent("rejected");
+    hideBanner();
+  };
+
+  const handleSavePreferences = () => {
+    if (analyticsEnabled) {
+      writeStoredConsent("analytics");
+      onAnalyticsAllowed();
+    } else {
+      writeStoredConsent("necessary-only");
+    }
+    hideBanner();
+  };
+
+  if (!isMounted) return null;
+
   return (
-    <div className={cn("cookie-slide-up fixed inset-x-0 bottom-0 z-50 px-4 pb-4", className)}>
-      <div className="mx-auto max-w-3xl rounded-2xl border bg-card/95 p-4 shadow-xl backdrop-blur supports-[backdrop-filter]:bg-card/90">
-        <div className="flex flex-col gap-3">
-          <div className="flex items-start gap-3">
-            <div className="rounded-full bg-primary/10 p-2 text-primary">
-              <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-            </div>
-            <div className="space-y-1 text-left">
-              <p className="text-sm font-semibold text-foreground">We value your privacy</p>
-              <p className="text-xs leading-relaxed text-muted-foreground">
-                We use cookies to provide essential site functionality, understand performance, and personalize
-                content. Review our data practices in the {" "}
-                <a href="/privacy-policy" className="font-medium text-primary underline-offset-4 hover:underline">
-                  Privacy Policy
-                </a>{" "}
-                and Cookie Notice. Necessary cookies are always on for security, fraud prevention, and legal compliance.
-              </p>
-            </div>
+    <div
+      className={`fixed inset-x-0 bottom-0 z-50 transform transition-transform duration-300 ease-out bg-[#f8f9fa] border-t-2 border-[#dee2e6] shadow-[0_-2px_10px_rgba(0,0,0,0.1)] font-sans text-sm text-[#333] ${
+        isVisible ? "translate-y-0" : "translate-y-full"
+      }`}
+    >
+      <div className="mx-auto max-w-5xl px-5 py-5">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="min-w-[280px] flex-1 text-left">
+            <p className="m-0 text-[14px] leading-relaxed text-[#333]">
+              We use cookies to analyze site traffic and improve your experience.
+              <a href="/privacy-policy" className="ml-1 text-[#0066cc] underline">
+                Learn more
+              </a>
+            </p>
           </div>
-
-          <div className="grid gap-2 rounded-xl bg-muted/40 p-3 sm:grid-cols-3">
-            <ConsentToggle
-              title="Necessary"
-              description="Required for reliability, authentication, and security."
-              checked
-              disabled
-            />
-            <ConsentToggle
-              title="Analytics"
-              description="Helps us understand traffic and improve the experience."
-              checked={analyticsEnabled}
-              onCheckedChange={setAnalyticsEnabled}
-            />
-            <ConsentToggle
-              title="Marketing"
-              description="Allows personalized content and offers that may interest you."
-              checked={marketingEnabled}
-              onCheckedChange={setMarketingEnabled}
-            />
-          </div>
-
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-end sm:gap-3">
-            <Button variant="secondary" onClick={handleSave} className="w-full sm:w-auto text-sm">
-              Save preferences
-            </Button>
-            <Button onClick={onAcceptAll} className="w-full sm:w-auto text-sm">
-              Accept all
-            </Button>
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setShowPreferences(true)}
+              className="rounded-md bg-[#6c757d] px-4 py-2 text-[14px] font-medium text-white transition hover:opacity-90"
+            >
+              Manage Preferences
+            </button>
+            <button
+              onClick={handleRejectAll}
+              className="rounded-md bg-[#6c757d] px-4 py-2 text-[14px] font-medium text-white transition hover:opacity-90"
+            >
+              Reject All
+            </button>
+            <button
+              onClick={handleAcceptAll}
+              className="rounded-md bg-[#28a745] px-4 py-2 text-[14px] font-bold text-white transition hover:opacity-90"
+            >
+              Accept All
+            </button>
           </div>
         </div>
-      </div>
-    </div>
-  );
-}
 
-function ConsentToggle({
-  title,
-  description,
-  checked,
-  onCheckedChange,
-  disabled,
-}: {
-  title: string;
-  description: string;
-  checked?: boolean;
-  onCheckedChange?: (value: boolean) => void;
-  disabled?: boolean;
-}) {
-  return (
-    <div className="flex items-start justify-between gap-2 rounded-lg border bg-background px-3 py-2">
-      <div className="space-y-0.5">
-        <p className="text-sm font-semibold text-foreground">{title}</p>
-        <p className="text-xs leading-relaxed text-muted-foreground">{description}</p>
+        {showPreferences && (
+          <div className="mt-6 border-t border-[#dee2e6] pt-5">
+            <div className="grid gap-4">
+              <div className="flex items-center justify-between rounded-md bg-white px-4 py-3 shadow-sm">
+                <div>
+                  <strong className="mb-1 block text-[14px] text-[#222]">Necessary</strong>
+                  <span className="text-[13px] text-[#666]">Required for site functionality.</span>
+                </div>
+                <label className="relative inline-block h-6 w-12 cursor-not-allowed">
+                  <input type="checkbox" checked disabled className="sr-only" aria-label="Necessary cookies" />
+                  <span className="cookie-toggle-slider bg-[#28a745]" aria-hidden />
+                </label>
+              </div>
+
+              <div className="flex items-center justify-between rounded-md bg-white px-4 py-3 shadow-sm">
+                <div>
+                  <strong className="mb-1 block text-[14px] text-[#222]">Analytics</strong>
+                  <span className="text-[13px] text-[#666]">Helps us understand traffic and improve experience.</span>
+                </div>
+                <label className="cookie-toggle relative inline-block h-6 w-12">
+                  <input
+                    type="checkbox"
+                    id="analyticsToggle"
+                    className="sr-only"
+                    checked={analyticsEnabled}
+                    onChange={(event) => setAnalyticsEnabled(event.target.checked)}
+                    aria-label="Analytics cookies"
+                  />
+                  <span className="cookie-toggle-slider" aria-hidden />
+                </label>
+              </div>
+            </div>
+
+            <div className="mt-4 flex justify-end gap-2">
+              <button
+                onClick={handleSavePreferences}
+                className="rounded-md bg-[#28a745] px-4 py-2 text-[14px] font-bold text-white transition hover:opacity-90"
+              >
+                Save Preferences
+              </button>
+            </div>
+          </div>
+        )}
       </div>
-      <Switch checked={checked} onCheckedChange={onCheckedChange} disabled={disabled} aria-label={`${title} cookies`} />
     </div>
   );
 }
