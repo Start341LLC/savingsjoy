@@ -12,6 +12,7 @@ import CookieConsentBanner from "@/components/CookieConsentBanner";
 import Home from "@/pages/Home";
 import Contact from "@/pages/Contact";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsOfUse from "@/pages/TermsOfUse";
 import VerticalPage from "@/pages/VerticalPage";
 import NotFound from "@/pages/not-found";
 
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/terms-of-use" component={TermsOfUse} />
       
       {/* Vertical pages */}
       <Route path="/realestate">

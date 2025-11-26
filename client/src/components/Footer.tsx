@@ -45,12 +45,23 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/privacy-policy">
-                  <div 
-                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer" 
+                  <div
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                     data-testid="footer-link-privacy"
                     onClick={() => trackFooterLink('Privacy Policy')}
                   >
                     Privacy Policy
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-of-use">
+                  <div
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                    data-testid="footer-link-terms"
+                    onClick={() => trackFooterLink('Terms of Use')}
+                  >
+                    Terms of Use
                   </div>
                 </Link>
               </li>
