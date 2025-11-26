@@ -26,18 +26,18 @@ export function CookieConsentBanner({
   };
 
   return (
-    <div className={cn("fixed bottom-4 left-0 right-0 z-50 px-4", className)}>
-      <div className="mx-auto max-w-5xl rounded-xl border bg-card p-5 shadow-xl backdrop-blur supports-[backdrop-filter]:bg-card/90">
-        <div className="flex flex-col gap-4">
-          <div className="flex gap-3">
-            <div className="rounded-lg bg-primary/10 p-2 text-primary">
-              <ShieldCheck className="h-5 w-5" aria-hidden="true" />
+    <div className={cn("cookie-slide-up fixed inset-x-0 bottom-0 z-50 px-4 pb-4", className)}>
+      <div className="mx-auto max-w-3xl rounded-2xl border bg-card/95 p-4 shadow-xl backdrop-blur supports-[backdrop-filter]:bg-card/90">
+        <div className="flex flex-col gap-3">
+          <div className="flex items-start gap-3">
+            <div className="rounded-full bg-primary/10 p-2 text-primary">
+              <ShieldCheck className="h-4 w-4" aria-hidden="true" />
             </div>
-            <div className="space-y-2 text-left">
+            <div className="space-y-1 text-left">
               <p className="text-sm font-semibold text-foreground">We value your privacy</p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs leading-relaxed text-muted-foreground">
                 We use cookies to provide essential site functionality, understand performance, and personalize
-                content. You can review our data practices in the {" "}
+                content. Review our data practices in the {" "}
                 <a href="/privacy-policy" className="font-medium text-primary underline-offset-4 hover:underline">
                   Privacy Policy
                 </a>{" "}
@@ -46,10 +46,10 @@ export function CookieConsentBanner({
             </div>
           </div>
 
-          <div className="grid gap-3 rounded-lg bg-muted/40 p-3 sm:grid-cols-2">
+          <div className="grid gap-2 rounded-xl bg-muted/40 p-3 sm:grid-cols-3">
             <ConsentToggle
               title="Necessary"
-              description="Required for site reliability, authentication, and security."
+              description="Required for reliability, authentication, and security."
               checked
               disabled
             />
@@ -68,10 +68,10 @@ export function CookieConsentBanner({
           </div>
 
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-end sm:gap-3">
-            <Button variant="secondary" onClick={handleSave} className="w-full sm:w-auto">
+            <Button variant="secondary" onClick={handleSave} className="w-full sm:w-auto text-sm">
               Save preferences
             </Button>
-            <Button onClick={onAcceptAll} className="w-full sm:w-auto">
+            <Button onClick={onAcceptAll} className="w-full sm:w-auto text-sm">
               Accept all
             </Button>
           </div>
@@ -95,10 +95,10 @@ function ConsentToggle({
   disabled?: boolean;
 }) {
   return (
-    <div className="flex items-start justify-between gap-3 rounded-md border bg-background px-3 py-2">
-      <div className="space-y-1">
-        <p className="text-sm font-medium text-foreground">{title}</p>
-        <p className="text-xs text-muted-foreground">{description}</p>
+    <div className="flex items-start justify-between gap-2 rounded-lg border bg-background px-3 py-2">
+      <div className="space-y-0.5">
+        <p className="text-sm font-semibold text-foreground">{title}</p>
+        <p className="text-xs leading-relaxed text-muted-foreground">{description}</p>
       </div>
       <Switch checked={checked} onCheckedChange={onCheckedChange} disabled={disabled} aria-label={`${title} cookies`} />
     </div>

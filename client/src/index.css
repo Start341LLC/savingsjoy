@@ -175,6 +175,22 @@
   }
 }
 
+.cookie-slide-up {
+  animation: cookie-slide-up 280ms ease-out;
+}
+
+@keyframes cookie-slide-up {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /**
  * Using the elevate system.
  * Automatic contrast adjustment.
