@@ -77,6 +77,7 @@ export default function ContactForm() {
                           <Input
                             placeholder="Your name"
                             {...field}
+                            required
                             data-testid="input-name"
                           />
                         </FormControl>
@@ -96,6 +97,7 @@ export default function ContactForm() {
                             type="email"
                             placeholder="your@email.com"
                             {...field}
+                            required
                             data-testid="input-email"
                           />
                         </FormControl>
@@ -111,14 +113,15 @@ export default function ContactForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Subject</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="What's this about?"
-                          {...field}
-                          data-testid="input-subject"
-                        />
-                      </FormControl>
-                      <FormMessage />
+                        <FormControl>
+                          <Input
+                            placeholder="What's this about?"
+                            {...field}
+                            required
+                            data-testid="input-subject"
+                          />
+                        </FormControl>
+                        <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -129,14 +132,15 @@ export default function ContactForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Tell us more..."
-                          className="min-h-[150px] resize-none"
-                          {...field}
-                          data-testid="input-message"
-                        />
-                      </FormControl>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Tell us more..."
+                            className="min-h-[150px] resize-none"
+                            {...field}
+                            required
+                            data-testid="input-message"
+                          />
+                        </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}

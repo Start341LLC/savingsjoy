@@ -175,6 +175,22 @@
   }
 }
 
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 1rem;
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  color: #111827;
+  border: 2px solid #111827;
+  border-radius: 0.5rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
 .cookie-slide-up {
   animation: cookie-slide-up 280ms ease-out;
 }
