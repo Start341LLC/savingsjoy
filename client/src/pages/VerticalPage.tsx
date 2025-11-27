@@ -298,6 +298,123 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
           },
         ],
       };
+    } else if (slug === "creditcards") {
+      ldData = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Best Credit Cards 2025 | Compare Rewards & Cash Back Offers",
+        description:
+          "Compare top credit cards including Chase Sapphire Preferred, American Express Gold, and Capital One Venture. Find the best rewards programs and cash back offers for 2025.",
+        url: "https://savingsjoy.com/credit-cards",
+        publisher: {
+          "@type": "Organization",
+          name: "SavingsJoy",
+          url: "https://savingsjoy.com",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://savingsjoy.com/logo.png",
+          },
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Top Credit Card Offers",
+          description: "Compare leading credit cards for rewards, travel, and cash back",
+          numberOfItems: 3,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              item: {
+                "@type": "FinancialProduct",
+                name: "Chase Sapphire Preferred - Travel Rewards Card",
+                description:
+                  "Earn 2X points on travel and dining. Redeem for travel through Chase Ultimate Rewards.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Chase",
+                },
+                category: "Travel Rewards Credit Card",
+                url: "https://chase.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              item: {
+                "@type": "FinancialProduct",
+                name: "American Express Gold Card - Dining & Groceries",
+                description:
+                  "Earn 4X points at restaurants and U.S. supermarkets. Premium dining benefits included.",
+                provider: {
+                  "@type": "Organization",
+                  name: "American Express",
+                },
+                category: "Dining Rewards Credit Card",
+                url: "https://americanexpress.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              item: {
+                "@type": "FinancialProduct",
+                name: "Capital One Venture - Unlimited 2X Miles",
+                description:
+                  "Earn unlimited 2X miles on every purchase. Redeem for any travel or transfer to partners.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Capital One",
+                },
+                category: "Travel Rewards Credit Card",
+                url: "https://capitalone.com",
+              },
+            },
+          ],
+        },
+        hasPart: [
+          {
+            "@type": "Article",
+            headline: "Credit Card Rewards Guide: Maximizing Points, Miles, and Cash Back",
+            description:
+              "Learn strategies to maximize credit card rewards and choose the right card for your spending habits.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline: "Travel Credit Cards Compared: Which One Offers the Best Value?",
+            description:
+              "Compare top travel credit cards by rewards rates, redemption options, and premium benefits.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline: "Building Credit: Best Credit Cards for Beginners",
+            description:
+              "Discover credit cards designed for building credit history with responsible use.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline:
+              "Cash Back vs Points: Which Credit Card Rewards Program Is Right for You?",
+            description:
+              "Understand the differences between cash back and points programs to choose the best fit.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+        ],
+      };
     } else if (slug === "taxes") {
       ldData = {
         "@context": "https://schema.org",
