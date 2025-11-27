@@ -298,6 +298,156 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
           },
         ],
       };
+    } else if (slug === "taxes") {
+      ldData = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Compare Tax Preparation Software | File Taxes Online & Maximize Refund",
+        description:
+          "Compare top tax software and services including TurboTax, H&R Block, TaxAct, FreeTaxUSA, and Credit Karma Tax. Find the best solution to file your taxes online and maximize your refund.",
+        url: "https://savingsjoy.com/taxes",
+        publisher: {
+          "@type": "Organization",
+          name: "SavingsJoy",
+          url: "https://savingsjoy.com",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://savingsjoy.com/logo.png",
+          },
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Top Tax Preparation Services",
+          description: "Compare leading tax software and filing services",
+          numberOfItems: 5,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              item: {
+                "@type": "Service",
+                name: "TurboTax - File Your Taxes Online",
+                description:
+                  "America's #1 tax preparation software. Easy step-by-step guidance, maximum refund guarantee, and free audit support.",
+                provider: {
+                  "@type": "Organization",
+                  name: "TurboTax",
+                },
+                category: "Tax Software",
+                url: "https://turbotax.intuit.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              item: {
+                "@type": "Service",
+                name: "H&R Block - Tax Preparation & Filing",
+                description:
+                  "File online or visit a local office. Get help from tax professionals and maximize your refund.",
+                provider: {
+                  "@type": "Organization",
+                  name: "H&R Block",
+                },
+                category: "Tax Software & Services",
+                url: "https://hrblock.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              item: {
+                "@type": "Service",
+                name: "TaxAct - Affordable Tax Filing Software",
+                description:
+                  "Budget-friendly tax software with comprehensive features. Free federal filing options available.",
+                provider: {
+                  "@type": "Organization",
+                  name: "TaxAct",
+                },
+                category: "Tax Software",
+                url: "https://taxact.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              item: {
+                "@type": "Service",
+                name: "FreeTaxUSA - Free Federal Tax Filing",
+                description:
+                  "Completely free federal tax filing with optional state filing. Simple, secure, and accurate.",
+                provider: {
+                  "@type": "Organization",
+                  name: "FreeTaxUSA",
+                },
+                category: "Free Tax Software",
+                url: "https://freetaxusa.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 5,
+              item: {
+                "@type": "Service",
+                name: "Credit Karma Tax - 100% Free Tax Filing",
+                description:
+                  "Completely free federal and state tax filing. No hidden fees, no upgrades required.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Credit Karma",
+                },
+                category: "Free Tax Software",
+                url: "https://creditkarma.com/tax",
+              },
+            },
+          ],
+        },
+        hasPart: [
+          {
+            "@type": "Article",
+            headline: "Tax Filing Guide 2025: Everything You Need to Know Before Filing",
+            description:
+              "Complete overview of tax filing requirements, deadlines, and common deductions for the current tax year.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline:
+              "Maximizing Your Tax Refund: Deductions and Credits You Shouldn't Miss",
+            description:
+              "Discover overlooked tax deductions and credits that can significantly increase your refund.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline: "Free vs Paid Tax Software: Which Option Is Right for You?",
+            description:
+              "Compare free and paid tax software features to determine the best choice for your tax situation.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline:
+              "Self-Employed Tax Guide: Deductions, Quarterly Payments, and Filing Tips",
+            description:
+              "Essential tax information for freelancers, contractors, and small business owners.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+        ],
+      };
     }
 
     if (!ldData) return;
