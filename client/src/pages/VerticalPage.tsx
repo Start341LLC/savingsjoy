@@ -14,145 +14,297 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
   const vertical = verticals.find((v) => v.slug === slug);
 
   useEffect(() => {
-    if (slug !== "realestate") return;
+    let ldData: Record<string, unknown> | null = null;
 
-    const realEstateLdData = {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: "Compare Top Real Estate Listings & Home Search Providers",
-      description:
-        "Find your dream home by comparing top real estate platforms including Zillow, Redfin, Trulia, and cash home buying services.",
-      url: "https://savingsjoy.com/realestate",
-      publisher: {
-        "@type": "Organization",
-        name: "SavingsJoy",
-        url: "https://savingsjoy.com",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://savingsjoy.com/logo.png",
+    if (slug === "realestate") {
+      ldData = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Compare Top Real Estate Listings & Home Search Providers",
+        description:
+          "Find your dream home by comparing top real estate platforms including Zillow, Redfin, Trulia, and cash home buying services.",
+        url: "https://savingsjoy.com/realestate",
+        publisher: {
+          "@type": "Organization",
+          name: "SavingsJoy",
+          url: "https://savingsjoy.com",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://savingsjoy.com/logo.png",
+          },
         },
-      },
-      mainEntity: {
-        "@type": "ItemList",
-        name: "Top Real Estate Service Providers",
-        description: "Compare leading real estate platforms and services",
-        numberOfItems: 4,
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            item: {
-              "@type": "Service",
-              name: "Zillow - Find Your Dream Home",
-              description:
-                "Search millions of homes for sale and rent. Get home values, compare neighborhoods, and connect with local real estate agents.",
-              provider: {
-                "@type": "Organization",
-                name: "Zillow",
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Top Real Estate Service Providers",
+          description: "Compare leading real estate platforms and services",
+          numberOfItems: 4,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              item: {
+                "@type": "Service",
+                name: "Zillow - Find Your Dream Home",
+                description:
+                  "Search millions of homes for sale and rent. Get home values, compare neighborhoods, and connect with local real estate agents.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Zillow",
+                },
+                category: "Real Estate Search",
+                url: "https://zillow.com",
               },
-              category: "Real Estate Search",
-              url: "https://zillow.com",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              item: {
+                "@type": "Service",
+                name: "Liz Buys Houses - Sell Fast for Cash",
+                description:
+                  "Get a fair cash offer for your house in days. Skip repairs, agent fees, and lengthy listings with a quick closing timeline.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Liz Buys Houses",
+                },
+                category: "Cash Home Buying",
+                url: "https://lizbuyshouses.net",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              item: {
+                "@type": "Service",
+                name: "Redfin - Buy & Sell Real Estate",
+                description:
+                  "Low-commission real estate brokerage with full-service agents. Save thousands on listing fees.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Redfin",
+                },
+                category: "Real Estate Brokerage",
+                url: "https://redfin.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              item: {
+                "@type": "Service",
+                name: "Trulia - Homes for Sale & Real Estate",
+                description:
+                  "Discover homes for sale with detailed neighborhood insights, school ratings, and local amenities.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Trulia",
+                },
+                category: "Real Estate Search",
+                url: "https://trulia.com",
+              },
+            },
+          ],
+        },
+        hasPart: [
+          {
+            "@type": "Article",
+            headline: "First-Time Homebuyer's Guide: 5 Steps to Your Dream Home",
+            description:
+              "Buying your first home is one of life's most exciting milestones, but it can feel overwhelming without proper guidance.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
             },
           },
           {
-            "@type": "ListItem",
-            position: 2,
-            item: {
-              "@type": "Service",
-              name: "Liz Buys Houses - Sell Fast for Cash",
-              description:
-                "Get a fair cash offer for your house in days. Skip repairs, agent fees, and lengthy listings with a quick closing timeline.",
-              provider: {
-                "@type": "Organization",
-                name: "Liz Buys Houses",
-              },
-              category: "Cash Home Buying",
-              url: "https://lizbuyshouses.net",
+            "@type": "Article",
+            headline: "Selling Your Home Fast: Proven Strategies for Maximum Value",
+            description:
+              "Whether you're relocating, downsizing, or upgrading, selling your home quickly at the right price requires strategy.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
             },
           },
           {
-            "@type": "ListItem",
-            position: 3,
-            item: {
-              "@type": "Service",
-              name: "Redfin - Buy & Sell Real Estate",
-              description:
-                "Low-commission real estate brokerage with full-service agents. Save thousands on listing fees.",
-              provider: {
-                "@type": "Organization",
-                name: "Redfin",
-              },
-              category: "Real Estate Brokerage",
-              url: "https://redfin.com",
+            "@type": "Article",
+            headline:
+              "Understanding Real Estate Market Trends: Is Now the Right Time to Buy or Sell?",
+            description:
+              "The real estate market constantly shifts based on economic factors, interest rates, and local supply and demand.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
             },
           },
           {
-            "@type": "ListItem",
-            position: 4,
-            item: {
-              "@type": "Service",
-              name: "Trulia - Homes for Sale & Real Estate",
-              description:
-                "Discover homes for sale with detailed neighborhood insights, school ratings, and local amenities.",
-              provider: {
-                "@type": "Organization",
-                name: "Trulia",
-              },
-              category: "Real Estate Search",
-              url: "https://trulia.com",
+            "@type": "Article",
+            headline:
+              "Comparing Real Estate Platforms: How to Choose the Best Service for Your Needs",
+            description:
+              "Not all real estate platforms are created equal. Understanding their differences helps you find homes faster and get better deals.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
             },
           },
         ],
-      },
-      hasPart: [
-        {
-          "@type": "Article",
-          headline: "First-Time Homebuyer's Guide: 5 Steps to Your Dream Home",
-          description:
-            "Buying your first home is one of life's most exciting milestones, but it can feel overwhelming without proper guidance.",
-          author: {
-            "@type": "Organization",
-            name: "SavingsJoy",
+      };
+    } else if (slug === "insurance") {
+      ldData = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Compare Insurance Quotes | Auto, Home & Life Coverage",
+        description:
+          "Compare insurance rates from top providers including Progressive, GEICO, State Farm, Allstate, and Liberty Mutual. Find the best coverage for auto, home, and life insurance.",
+        url: "https://savingsjoy.com/insurance",
+        publisher: {
+          "@type": "Organization",
+          name: "SavingsJoy",
+          url: "https://savingsjoy.com",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://savingsjoy.com/logo.png",
           },
         },
-        {
-          "@type": "Article",
-          headline: "Selling Your Home Fast: Proven Strategies for Maximum Value",
-          description:
-            "Whether you're relocating, downsizing, or upgrading, selling your home quickly at the right price requires strategy.",
-          author: {
-            "@type": "Organization",
-            name: "SavingsJoy",
-          },
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Top Insurance Providers",
+          description: "Compare leading insurance companies for auto, home, and life coverage",
+          numberOfItems: 5,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              item: {
+                "@type": "Service",
+                name: "Progressive - Auto Insurance Quotes",
+                description:
+                  "Get a free auto insurance quote in minutes. Compare rates and find discounts on car insurance coverage.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Progressive",
+                },
+                category: "Auto Insurance",
+                url: "https://progressive.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              item: {
+                "@type": "Service",
+                name: "GEICO - 15 Minutes Could Save You 15% or More",
+                description:
+                  "Fast, easy quotes for car insurance. Bundle and save with home and renters insurance.",
+                provider: {
+                  "@type": "Organization",
+                  name: "GEICO",
+                },
+                category: "Auto Insurance",
+                url: "https://geico.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              item: {
+                "@type": "Service",
+                name: "State Farm - Get Auto Insurance Quotes",
+                description:
+                  "Trusted insurance provider with local agents. Get personalized auto, home, and life insurance coverage.",
+                provider: {
+                  "@type": "Organization",
+                  name: "State Farm",
+                },
+                category: "Multi-line Insurance",
+                url: "https://statefarm.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              item: {
+                "@type": "Service",
+                name: "Allstate - You're In Good Hands",
+                description:
+                  "Comprehensive insurance coverage with accident forgiveness and new car replacement.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Allstate",
+                },
+                category: "Auto Insurance",
+                url: "https://allstate.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 5,
+              item: {
+                "@type": "Service",
+                name: "Liberty Mutual - Customized Insurance Coverage",
+                description:
+                  "Personalized insurance policies tailored to your needs. Save with bundling discounts.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Liberty Mutual",
+                },
+                category: "Multi-line Insurance",
+                url: "https://libertymutual.com",
+              },
+            },
+          ],
         },
-        {
-          "@type": "Article",
-          headline:
-            "Understanding Real Estate Market Trends: Is Now the Right Time to Buy or Sell?",
-          description:
-            "The real estate market constantly shifts based on economic factors, interest rates, and local supply and demand.",
-          author: {
-            "@type": "Organization",
-            name: "SavingsJoy",
+        hasPart: [
+          {
+            "@type": "Article",
+            headline: "Auto Insurance 101: Understanding Coverage Types and Finding the Best Rates",
+            description:
+              "Learn about liability, collision, comprehensive coverage and how to compare quotes effectively.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
           },
-        },
-        {
-          "@type": "Article",
-          headline:
-            "Comparing Real Estate Platforms: How to Choose the Best Service for Your Needs",
-          description:
-            "Not all real estate platforms are created equal. Understanding their differences helps you find homes faster and get better deals.",
-          author: {
-            "@type": "Organization",
-            name: "SavingsJoy",
+          {
+            "@type": "Article",
+            headline: "Home Insurance Buyer's Guide: What's Covered and What's Not",
+            description:
+              "Understand home insurance policies, from dwelling coverage to personal property protection.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
           },
-        },
-      ],
-    };
+          {
+            "@type": "Article",
+            headline: "Life Insurance Explained: Term vs Whole Life and How Much You Need",
+            description:
+              "Compare life insurance types and calculate the right coverage amount for your family's needs.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline: "Money-Saving Insurance Tips: Discounts and Bundling Strategies",
+            description:
+              "Discover proven ways to reduce insurance premiums while maintaining quality coverage.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+        ],
+      };
+    }
+
+    if (!ldData) return;
 
     const script = document.createElement("script");
     script.type = "application/ld+json";
-    script.textContent = JSON.stringify(realEstateLdData);
+    script.textContent = JSON.stringify(ldData);
     document.head.appendChild(script);
 
     return () => {
