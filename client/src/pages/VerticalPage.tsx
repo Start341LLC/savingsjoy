@@ -298,6 +298,126 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
           },
         ],
       };
+    } else if (slug === "loans") {
+      ldData = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Personal Loans | Compare Rates & Get Approved in Minutes",
+        description:
+          "Compare personal loan rates from top lenders including SoFi, LendingClub, and Marcus. Find competitive rates for debt consolidation, home improvement, and more.",
+        url: "https://savingsjoy.com/loans",
+        publisher: {
+          "@type": "Organization",
+          name: "SavingsJoy",
+          url: "https://savingsjoy.com",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://savingsjoy.com/logo.png",
+          },
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Top Personal Loan Lenders",
+          description: "Compare leading personal loan providers and rates",
+          numberOfItems: 3,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              item: {
+                "@type": "FinancialProduct",
+                name: "SoFi Personal Loans - Low Rates, No Fees",
+                description:
+                  "Competitive rates with no origination fees. Unemployment protection and career coaching included.",
+                provider: {
+                  "@type": "Organization",
+                  name: "SoFi",
+                },
+                category: "Personal Loan",
+                url: "https://sofi.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              item: {
+                "@type": "FinancialProduct",
+                name: "LendingClub - Personal Loans Up to $40K",
+                description:
+                  "Fixed-rate personal loans for debt consolidation, home improvement, and major purchases.",
+                provider: {
+                  "@type": "Organization",
+                  name: "LendingClub",
+                },
+                category: "Personal Loan",
+                url: "https://lendingclub.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              item: {
+                "@type": "FinancialProduct",
+                name: "Marcus Personal Loans - No Fees",
+                description:
+                  "Simple personal loans with no fees. Flexible payment dates and free financial tools.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Marcus by Goldman Sachs",
+                },
+                category: "Personal Loan",
+                url: "https://marcus.com",
+              },
+            },
+          ],
+        },
+        hasPart: [
+          {
+            "@type": "Article",
+            headline:
+              "Personal Loans 101: How to Choose the Right Loan and Lender",
+            description:
+              "Complete guide to understanding personal loan types, rates, terms, and finding the best lender for your needs.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline:
+              "Debt Consolidation Loans: Save Money by Combining Your Debts",
+            description:
+              "Learn how debt consolidation loans work and whether consolidating your debts could save you money.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline:
+              "Personal Loan vs Credit Card: Which Is Better for Large Purchases?",
+            description:
+              "Compare the costs and benefits of personal loans versus credit cards for major expenses.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline:
+              "How to Get Approved: Personal Loan Requirements and Credit Score Tips",
+            description:
+              "Understand what lenders look for and how to improve your chances of personal loan approval.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+        ],
+      };
     } else if (slug === "creditcards") {
       ldData = {
         "@context": "https://schema.org",
