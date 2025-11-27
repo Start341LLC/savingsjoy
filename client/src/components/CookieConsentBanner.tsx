@@ -86,11 +86,23 @@ export function CookieConsentBanner({ onAnalyticsAllowed }: CookieConsentBannerP
       className={`fixed inset-x-0 bottom-0 z-50 transform transition-transform duration-300 ease-out bg-[#f8f9fa] border-t-2 border-[#dee2e6] shadow-[0_-2px_10px_rgba(0,0,0,0.1)] font-sans text-sm text-[#333] ${
         isVisible ? "translate-y-0" : "translate-y-full"
       }`}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cookie-consent-title"
+      aria-describedby="cookie-consent-description"
+      aria-live="polite"
+      tabIndex={-1}
     >
       <div className="mx-auto max-w-5xl px-5 py-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="min-w-[280px] flex-1 text-left">
-            <p className="m-0 text-[14px] leading-relaxed text-[#333]">
+            <h2 id="cookie-consent-title" className="sr-only">
+              Cookie consent notice
+            </h2>
+            <p
+              id="cookie-consent-description"
+              className="m-0 text-[14px] leading-relaxed text-[#333]"
+            >
               We use cookies to analyze site traffic and improve your experience.
               <a href="/privacy-policy" className="ml-1 text-[#0066cc] underline">
                 Learn more
@@ -101,6 +113,8 @@ export function CookieConsentBanner({ onAnalyticsAllowed }: CookieConsentBannerP
             <button
               onClick={() => setShowPreferences(true)}
               className="rounded-md bg-[#6c757d] px-4 py-2 text-[14px] font-medium text-white transition hover:opacity-90"
+              aria-expanded={showPreferences}
+              aria-controls="cookie-preferences"
             >
               Manage Preferences
             </button>
@@ -120,7 +134,7 @@ export function CookieConsentBanner({ onAnalyticsAllowed }: CookieConsentBannerP
         </div>
 
         {showPreferences && (
-          <div className="mt-6 border-t border-[#dee2e6] pt-5">
+          <div className="mt-6 border-t border-[#dee2e6] pt-5" id="cookie-preferences">
             <div className="grid gap-4">
               <div className="flex items-center justify-between rounded-md bg-white px-4 py-3 shadow-sm">
                 <div>
@@ -128,15 +142,19 @@ export function CookieConsentBanner({ onAnalyticsAllowed }: CookieConsentBannerP
                   <span className="text-[13px] text-[#666]">Required for site functionality.</span>
                 </div>
                 <label className="relative inline-block h-6 w-12 cursor-not-allowed">
-                  <input type="checkbox" checked disabled className="sr-only" aria-label="Necessary cookies" />
+                  <input type="checkbox" checked disabled className="sr-only" aria-label="Necessary cookies enabled" />
                   <span className="cookie-toggle-slider bg-[#28a745]" aria-hidden />
                 </label>
               </div>
 
               <div className="flex items-center justify-between rounded-md bg-white px-4 py-3 shadow-sm">
                 <div>
-                  <strong className="mb-1 block text-[14px] text-[#222]">Analytics</strong>
-                  <span className="text-[13px] text-[#666]">Helps us understand traffic and improve experience.</span>
+                  <strong id="analytics-label" className="mb-1 block text-[14px] text-[#222]">
+                    Analytics
+                  </strong>
+                  <span id="analytics-description" className="text-[13px] text-[#666]">
+                    Helps us understand traffic and improve experience.
+                  </span>
                 </div>
                 <label className="cookie-toggle relative inline-block h-6 w-12">
                   <input
@@ -145,7 +163,8 @@ export function CookieConsentBanner({ onAnalyticsAllowed }: CookieConsentBannerP
                     className="sr-only"
                     checked={analyticsEnabled}
                     onChange={(event) => setAnalyticsEnabled(event.target.checked)}
-                    aria-label="Analytics cookies"
+                    aria-labelledby="analytics-label"
+                    aria-describedby="analytics-description"
                   />
                   <span className="cookie-toggle-slider" aria-hidden />
                 </label>
