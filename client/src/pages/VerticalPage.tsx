@@ -685,6 +685,122 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
           },
         ],
       };
+    } else if (slug === "mortgage") {
+      ldData = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Mortgage Rates Today | Compare Home Loans & Refinancing",
+        description:
+          "Compare current mortgage rates, refinancing options, and home loan programs from top lenders including Rocket Mortgage, Better.com, and LoanDepot.",
+        url: "https://savingsjoy.com/mortgage",
+        publisher: {
+          "@type": "Organization",
+          name: "SavingsJoy",
+          url: "https://savingsjoy.com",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://savingsjoy.com/logo.png",
+          },
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Top Mortgage Lenders",
+          description: "Compare leading mortgage and refinancing providers",
+          numberOfItems: 3,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              item: {
+                "@type": "FinancialProduct",
+                name: "Rocket Mortgage - Get Approved in Minutes",
+                description:
+                  "America's largest mortgage lender. Fast online approval with personalized rates and expert support.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Rocket Mortgage",
+                },
+                category: "Mortgage Lender",
+                url: "https://rocketmortgage.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              item: {
+                "@type": "FinancialProduct",
+                name: "Better.com - Digital Mortgage Lender",
+                description:
+                  "100% online mortgage lender with low rates and fees. Get pre-approved in 3 minutes.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Better.com",
+                },
+                category: "Digital Mortgage Lender",
+                url: "https://better.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              item: {
+                "@type": "FinancialProduct",
+                name: "LoanDepot - Home Loans & Refinancing",
+                description:
+                  "Comprehensive mortgage solutions with competitive rates. Purchase and refinance options available.",
+                provider: {
+                  "@type": "Organization",
+                  name: "LoanDepot",
+                },
+                category: "Mortgage Lender",
+                url: "https://loandepot.com",
+              },
+            },
+          ],
+        },
+        hasPart: [
+          {
+            "@type": "Article",
+            headline: "Mortgage Rate Guide 2025: Fixed vs ARM and How to Get the Best Rate",
+            description:
+              "Comprehensive guide to understanding mortgage types, current rates, and how to qualify for the best terms.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline: "First-Time Homebuyer Programs: Down Payment Assistance and FHA Loans",
+            description:
+              "Discover mortgage programs designed for first-time buyers with low down payment requirements.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline: "Should You Refinance? Calculate Your Break-Even Point",
+            description:
+              "Learn when refinancing makes sense and how to determine if you'll save money over time.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+          {
+            "@type": "Article",
+            headline: "Mortgage Pre-Approval: What It Means and How to Get One",
+            description:
+              "Understand the pre-approval process and why it's essential before house hunting.",
+            author: {
+              "@type": "Organization",
+              name: "SavingsJoy",
+            },
+          },
+        ],
+      };
     }
 
     if (!ldData) return;
