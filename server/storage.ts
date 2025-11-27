@@ -1,31 +1,62 @@
+import { randomUUID } from "crypto";
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
 import { contactSubmissions, type ContactSubmission, type InsertContactSubmission } from "@shared/schema";
 
-if (!process.env.DATABASE_URL) {
-  throw new Error(
-    "DATABASE_URL environment variable is required. " +
-    "Please ensure the database is configured or run 'npm run db:push' to set up the schema."
-  );
-}
+type DrizzleClient = ReturnType<typeof drizzle>;
 
-const sql = neon(process.env.DATABASE_URL);
-export const db = drizzle(sql);
+const databaseUrl = process.env.DATABASE_URL;
+let db: DrizzleClient | undefined;
+
+if (databaseUrl) {
+  const sql = neon(databaseUrl);
+  db = drizzle(sql);
+}
 
 export interface IStorage {
   saveContactSubmission(data: InsertContactSubmission): Promise<ContactSubmission>;
   getContactSubmissions(): Promise<ContactSubmission[]>;
 }
 
-export class DbStorage implements IStorage {
+class MemoryStorage implements IStorage {
+  private submissions: ContactSubmission[] = [];
+
   async saveContactSubmission(data: InsertContactSubmission): Promise<ContactSubmission> {
-    const [submission] = await db.insert(contactSubmissions).values(data).returning();
+    const submission: ContactSubmission = {
+      id: randomUUID(),
+      submittedAt: new Date(),
+      ...data,
+    };
+
+    this.submissions.push(submission);
     return submission;
   }
 
   async getContactSubmissions(): Promise<ContactSubmission[]> {
-    return await db.select().from(contactSubmissions).orderBy(contactSubmissions.submittedAt);
+    return [...this.submissions].sort(
+      (a, b) => a.submittedAt.getTime() - b.submittedAt.getTime()
+    );
   }
 }
 
-export const storage = new DbStorage();
+export class DbStorage implements IStorage {
+  constructor(private readonly client: DrizzleClient) {}
+
+  async saveContactSubmission(data: InsertContactSubmission): Promise<ContactSubmission> {
+    const [submission] = await this.client.insert(contactSubmissions).values(data).returning();
+    return submission;
+  }
+
+  async getContactSubmissions(): Promise<ContactSubmission[]> {
+    return await this.client.select().from(contactSubmissions).orderBy(contactSubmissions.submittedAt);
+  }
+}
+
+export const storage: IStorage = db
+  ? new DbStorage(db)
+  : (() => {
+      console.warn(
+        "DATABASE_URL environment variable not set. Using in-memory storage; contact form submissions will not persist."
+      );
+      return new MemoryStorage();
+    })();
