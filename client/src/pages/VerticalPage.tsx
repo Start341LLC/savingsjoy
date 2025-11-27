@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import VerticalCard from "@/components/VerticalCard";
 import { verticals } from "@/config/verticals";
 import { Vertical } from "@shared/schema";
@@ -11,6 +12,153 @@ interface VerticalPageProps {
 
 export default function VerticalPage({ slug }: VerticalPageProps) {
   const vertical = verticals.find((v) => v.slug === slug);
+
+  useEffect(() => {
+    if (slug !== "realestate") return;
+
+    const realEstateLdData = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Compare Top Real Estate Listings & Home Search Providers",
+      description:
+        "Find your dream home by comparing top real estate platforms including Zillow, Redfin, Trulia, and cash home buying services.",
+      url: "https://savingsjoy.com/realestate",
+      publisher: {
+        "@type": "Organization",
+        name: "SavingsJoy",
+        url: "https://savingsjoy.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://savingsjoy.com/logo.png",
+        },
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        name: "Top Real Estate Service Providers",
+        description: "Compare leading real estate platforms and services",
+        numberOfItems: 4,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            item: {
+              "@type": "Service",
+              name: "Zillow - Find Your Dream Home",
+              description:
+                "Search millions of homes for sale and rent. Get home values, compare neighborhoods, and connect with local real estate agents.",
+              provider: {
+                "@type": "Organization",
+                name: "Zillow",
+              },
+              category: "Real Estate Search",
+              url: "https://zillow.com",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            item: {
+              "@type": "Service",
+              name: "Liz Buys Houses - Sell Fast for Cash",
+              description:
+                "Get a fair cash offer for your house in days. Skip repairs, agent fees, and lengthy listings with a quick closing timeline.",
+              provider: {
+                "@type": "Organization",
+                name: "Liz Buys Houses",
+              },
+              category: "Cash Home Buying",
+              url: "https://lizbuyshouses.net",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            item: {
+              "@type": "Service",
+              name: "Redfin - Buy & Sell Real Estate",
+              description:
+                "Low-commission real estate brokerage with full-service agents. Save thousands on listing fees.",
+              provider: {
+                "@type": "Organization",
+                name: "Redfin",
+              },
+              category: "Real Estate Brokerage",
+              url: "https://redfin.com",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            item: {
+              "@type": "Service",
+              name: "Trulia - Homes for Sale & Real Estate",
+              description:
+                "Discover homes for sale with detailed neighborhood insights, school ratings, and local amenities.",
+              provider: {
+                "@type": "Organization",
+                name: "Trulia",
+              },
+              category: "Real Estate Search",
+              url: "https://trulia.com",
+            },
+          },
+        ],
+      },
+      hasPart: [
+        {
+          "@type": "Article",
+          headline: "First-Time Homebuyer's Guide: 5 Steps to Your Dream Home",
+          description:
+            "Buying your first home is one of life's most exciting milestones, but it can feel overwhelming without proper guidance.",
+          author: {
+            "@type": "Organization",
+            name: "SavingsJoy",
+          },
+        },
+        {
+          "@type": "Article",
+          headline: "Selling Your Home Fast: Proven Strategies for Maximum Value",
+          description:
+            "Whether you're relocating, downsizing, or upgrading, selling your home quickly at the right price requires strategy.",
+          author: {
+            "@type": "Organization",
+            name: "SavingsJoy",
+          },
+        },
+        {
+          "@type": "Article",
+          headline:
+            "Understanding Real Estate Market Trends: Is Now the Right Time to Buy or Sell?",
+          description:
+            "The real estate market constantly shifts based on economic factors, interest rates, and local supply and demand.",
+          author: {
+            "@type": "Organization",
+            name: "SavingsJoy",
+          },
+        },
+        {
+          "@type": "Article",
+          headline:
+            "Comparing Real Estate Platforms: How to Choose the Best Service for Your Needs",
+          description:
+            "Not all real estate platforms are created equal. Understanding their differences helps you find homes faster and get better deals.",
+          author: {
+            "@type": "Organization",
+            name: "SavingsJoy",
+          },
+        },
+      ],
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(realEstateLdData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, [slug]);
 
   if (!vertical) {
     return (
