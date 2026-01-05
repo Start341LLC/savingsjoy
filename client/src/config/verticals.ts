@@ -9,18 +9,6 @@ export const verticals: Vertical[] = [
       "Search millions of homes for sale and rent. Compare real estate listing sites, get free home valuations, and connect with local agents near you.",
     offers: [
       {
-        id: "re-1",
-        companyName: "Zillow",
-        logoUrl: "https://logo.clearbit.com/zillow.com",
-        title: "Zillow - Find Your Dream Home",
-        description:
-          "Search millions of homes for sale and rent. Get home values, compare neighborhoods, and connect with local real estate agents.",
-        displayUrl: "zillow.com",
-        affiliateLink: "https://www.zillow.com",
-        rating: 4.5,
-        features: ["Millions of listings", "Home value estimates", "Local market data"],
-      },
-      {
         id: "re-2",
         companyName: "Liz Buys Houses",
         logoUrl: "https://logo.clearbit.com/lizbuyshouses.net",
@@ -32,6 +20,18 @@ export const verticals: Vertical[] = [
           "https://afflat3e3.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=26854&c=918271&a=747832&k=C739C6E9CC82811120A9B8F0B8A12356&l=28630&s1=redirect",
         rating: 4.3,
         features: ["Cash offers in days", "No repairs needed", "Close on your timeline"],
+      },
+      {
+        id: "re-1",
+        companyName: "Zillow",
+        logoUrl: "https://logo.clearbit.com/zillow.com",
+        title: "Zillow - Find Your Dream Home",
+        description:
+          "Search millions of homes for sale and rent. Get home values, compare neighborhoods, and connect with local real estate agents.",
+        displayUrl: "zillow.com",
+        affiliateLink: "https://www.zillow.com",
+        rating: 4.5,
+        features: ["Millions of listings", "Home value estimates", "Local market data"],
       },
       {
         id: "re-3",

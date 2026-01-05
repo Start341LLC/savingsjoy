@@ -44,22 +44,6 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
               position: 1,
               item: {
                 "@type": "Service",
-                name: "Zillow - Find Your Dream Home",
-                description:
-                  "Search millions of homes for sale and rent. Get home values, compare neighborhoods, and connect with local real estate agents.",
-                provider: {
-                  "@type": "Organization",
-                  name: "Zillow",
-                },
-                category: "Real Estate Search",
-                url: "https://zillow.com",
-              },
-            },
-            {
-              "@type": "ListItem",
-              position: 2,
-              item: {
-                "@type": "Service",
                 name: "Liz Buys Houses - Sell Fast for Cash",
                 description:
                   "Get a fair cash offer for your house in days. Skip repairs, agent fees, and lengthy listings with a quick closing timeline.",
@@ -69,6 +53,22 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
                 },
                 category: "Cash Home Buying",
                 url: "https://lizbuyshouses.net",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              item: {
+                "@type": "Service",
+                name: "Zillow - Find Your Dream Home",
+                description:
+                  "Search millions of homes for sale and rent. Get home values, compare neighborhoods, and connect with local real estate agents.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Zillow",
+                },
+                category: "Real Estate Search",
+                url: "https://zillow.com",
               },
             },
             {
