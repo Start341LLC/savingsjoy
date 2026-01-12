@@ -34,6 +34,19 @@ export const verticals: Vertical[] = [
         features: ["Millions of listings", "Home value estimates", "Local market data"],
       },
       {
+        id: "re-5",
+        companyName: "HomeLight",
+        logoUrl: "https://logo.clearbit.com/homelight.com",
+        title: "HomeLight - Connect with Top Real Estate Agents",
+        description:
+          "Find top-rated real estate agents in your area. Get matched with experienced professionals based on your needs and location.",
+        displayUrl: "homelight.com",
+        affiliateLink:
+          "https://afflat3d2.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=30155&c=918271&a=747832&k=4C412C961CC577FD6BA1312355DFD005&l=34519",
+        rating: 4.4,
+        features: ["Top-rated agents", "Free agent matching", "Performance data"],
+      },
+      {
         id: "re-3",
         companyName: "Redfin",
         logoUrl: "https://logo.clearbit.com/redfin.com",

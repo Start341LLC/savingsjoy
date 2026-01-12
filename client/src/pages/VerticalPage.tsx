@@ -37,7 +37,7 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
           "@type": "ItemList",
           name: "Top Real Estate Service Providers",
           description: "Compare leading real estate platforms and services",
-          numberOfItems: 4,
+          numberOfItems: 5,
           itemListElement: [
             {
               "@type": "ListItem",
@@ -76,6 +76,22 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
               position: 3,
               item: {
                 "@type": "Service",
+                name: "HomeLight - Connect with Top Real Estate Agents",
+                description:
+                  "Find top-rated real estate agents in your area. Get matched with experienced professionals based on your needs and location.",
+                provider: {
+                  "@type": "Organization",
+                  name: "HomeLight",
+                },
+                category: "Real Estate Agent Matching",
+                url: "https://homelight.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              item: {
+                "@type": "Service",
                 name: "Redfin - Buy & Sell Real Estate",
                 description:
                   "Low-commission real estate brokerage with full-service agents. Save thousands on listing fees.",
@@ -89,7 +105,7 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
             },
             {
               "@type": "ListItem",
-              position: 4,
+              position: 5,
               item: {
                 "@type": "Service",
                 name: "Trulia - Homes for Sale & Real Estate",
