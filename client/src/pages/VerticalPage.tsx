@@ -37,7 +37,7 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
           "@type": "ItemList",
           name: "Top Real Estate Service Providers",
           description: "Compare leading real estate platforms and services",
-          numberOfItems: 4,
+          numberOfItems: 5,
           itemListElement: [
             {
               "@type": "ListItem",
@@ -76,6 +76,22 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
               position: 3,
               item: {
                 "@type": "Service",
+                name: "Rent-To-Own Listings - Path to Homeownership",
+                description:
+                  "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Rent-To-Own Listings",
+                },
+                category: "Rent-to-Own Real Estate",
+                url: "https://renttoownlistings.com",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              item: {
+                "@type": "Service",
                 name: "Redfin - Buy & Sell Real Estate",
                 description:
                   "Low-commission real estate brokerage with full-service agents. Save thousands on listing fees.",
@@ -89,7 +105,7 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
             },
             {
               "@type": "ListItem",
-              position: 4,
+              position: 5,
               item: {
                 "@type": "Service",
                 name: "Trulia - Homes for Sale & Real Estate",
