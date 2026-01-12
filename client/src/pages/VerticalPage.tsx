@@ -76,15 +76,15 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
               position: 3,
               item: {
                 "@type": "Service",
-                name: "HomeLight - Connect with Top Real Estate Agents",
+                name: "Rent-To-Own Listings - Path to Homeownership",
                 description:
-                  "Find top-rated real estate agents in your area. Get matched with experienced professionals based on your needs and location.",
+                  "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
                 provider: {
                   "@type": "Organization",
-                  name: "HomeLight",
+                  name: "Rent-To-Own Listings",
                 },
-                category: "Real Estate Agent Matching",
-                url: "https://homelight.com",
+                category: "Rent-to-Own Real Estate",
+                url: "https://renttoownlistings.com",
               },
             },
             {
