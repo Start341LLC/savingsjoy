@@ -9,6 +9,19 @@ export const verticals: Vertical[] = [
       "Search millions of homes for sale and rent. Compare real estate listing sites, get free home valuations, and connect with local agents near you.",
     offers: [
       {
+        id: "re-5",
+        companyName: "Rent-To-Own Listings",
+        logoUrl: "https://logo.clearbit.com/renttoownlistings.com",
+        title: "Rent-To-Own Listings - Path to Homeownership",
+        description:
+          "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
+        displayUrl: "renttoownlistings.com",
+        affiliateLink:
+          "https://afflat3d2.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=30155&c=918271&a=747832&k=4C412C961CC577FD6BA1312355DFD005&l=34519",
+        rating: 4.2,
+        features: ["Bad credit accepted", "Flexible terms", "Path to ownership"],
+      },
+      {
         id: "re-2",
         companyName: "Liz Buys Houses",
         logoUrl: "https://logo.clearbit.com/lizbuyshouses.net",
@@ -22,6 +35,18 @@ export const verticals: Vertical[] = [
         features: ["Cash offers in days", "No repairs needed", "Close on your timeline"],
       },
       {
+        id: "re-6",
+        companyName: "Trusted Home Offers",
+        logoUrl: "https://logo.clearbit.com/trustedhomeoffers.com",
+        title: "Trusted Home Offers - Fast Cash Home Buyers",
+        description:
+          "Get competitive cash offers from trusted home buyers. No commissions, no repairs, and close on your schedule with verified buyers.",
+        displayUrl: "trustedhomeoffers.com",
+        affiliateLink: "https://cd-down.com/?a=289942&c=416651",
+        rating: 4.4,
+        features: ["Verified cash buyers", "No commissions", "Quick closing process"],
+      },
+      {
         id: "re-1",
         companyName: "Zillow",
         logoUrl: "https://logo.clearbit.com/zillow.com",
@@ -32,19 +57,6 @@ export const verticals: Vertical[] = [
         affiliateLink: "https://www.zillow.com",
         rating: 4.5,
         features: ["Millions of listings", "Home value estimates", "Local market data"],
-      },
-      {
-        id: "re-5",
-        companyName: "Rent-To-Own Listings",
-        logoUrl: "https://logo.clearbit.com/renttoownlistings.com",
-        title: "Rent-To-Own Listings - Path to Homeownership",
-        description:
-          "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
-        displayUrl: "renttoownlistings.com",
-        affiliateLink:
-          "https://afflat3d2.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=30155&c=918271&a=747832&k=4C412C961CC577FD6BA1312355DFD005&l=34519",
-        rating: 4.2,
-        features: ["Bad credit accepted", "Flexible terms", "Path to ownership"],
       },
       {
         id: "re-3",
