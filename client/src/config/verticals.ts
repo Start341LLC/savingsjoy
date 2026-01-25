@@ -42,7 +42,7 @@ export const verticals: Vertical[] = [
           "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
         displayUrl: "renttoownlistings.com",
         affiliateLink:
-          "https://afflat3d2.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=30155&c=918271&a=747832&k=4C412C961CC577FD6BA1312355DFD005&l=34519",
+          "https://cd-down.com/?a=289942&c=416651&co=353281&mt=8&utm_source=clickdealer&utm_medium=contextual&utm_campaign=organic",
         rating: 4.2,
         features: ["Bad credit accepted", "Flexible terms", "Path to ownership"],
       },
