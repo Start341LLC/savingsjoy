@@ -5,9 +5,10 @@ interface SEOProps {
   title: string;
   description: string;
   keywords?: string[];
+  canonicalUrl?: string;
 }
 
-export default function SEO({ title, description, keywords }: SEOProps) {
+export default function SEO({ title, description, keywords, canonicalUrl }: SEOProps) {
   useEffect(() => {
     // Update document title
     document.title = `${title} | ${siteConfig.name}`;
@@ -32,6 +33,17 @@ export default function SEO({ title, description, keywords }: SEOProps) {
       metaKeywords.setAttribute("content", keywords.join(", "));
     }
 
+    // Update canonical URL if provided
+    if (canonicalUrl) {
+      let canonicalLink = document.querySelector('link[rel="canonical"]');
+      if (!canonicalLink) {
+        canonicalLink = document.createElement("link");
+        canonicalLink.setAttribute("rel", "canonical");
+        document.head.appendChild(canonicalLink);
+      }
+      canonicalLink.setAttribute("href", canonicalUrl);
+    }
+
     // Open Graph tags
     const updateOGTag = (property: string, content: string) => {
       let ogTag = document.querySelector(`meta[property="${property}"]`);
@@ -47,7 +59,7 @@ export default function SEO({ title, description, keywords }: SEOProps) {
     updateOGTag("og:description", description);
     updateOGTag("og:site_name", siteConfig.name);
     updateOGTag("og:url", `${siteConfig.url}${window.location.pathname}`);
-  }, [title, description, keywords]);
+  }, [title, description, keywords, canonicalUrl]);
 
   return null;
 }
