@@ -846,10 +846,11 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO 
+      <SEO
         title={vertical.title}
         description={vertical.metaDescription}
         keywords={[vertical.slug, 'savings', 'deals', 'comparison', 'quotes']}
+        canonicalUrl={slug === "realestate" ? "https://www.savingsjoy.com/realestate" : undefined}
       />
       {/* Header with Urgency */}
       <section className="pt-6 pb-4 bg-background border-b border-border">
