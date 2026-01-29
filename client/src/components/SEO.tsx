@@ -33,15 +33,20 @@ export default function SEO({ title, description, keywords, canonicalUrl }: SEOP
       metaKeywords.setAttribute("content", keywords.join(", "));
     }
 
-    // Update canonical URL if provided
+    // Update or remove canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (canonicalUrl) {
-      let canonicalLink = document.querySelector('link[rel="canonical"]');
       if (!canonicalLink) {
         canonicalLink = document.createElement("link");
         canonicalLink.setAttribute("rel", "canonical");
         document.head.appendChild(canonicalLink);
       }
       canonicalLink.setAttribute("href", canonicalUrl);
+    } else {
+      // Remove canonical tag if no URL is provided (prevents stale tags from other pages)
+      if (canonicalLink) {
+        canonicalLink.remove();
+      }
     }
 
     // Open Graph tags
