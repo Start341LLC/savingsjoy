@@ -76,10 +76,23 @@ export function serveStatic(app: Express) {
     );
   }
 
+  // Serve static assets (JS, CSS, images, etc.)
   app.use(express.static(distPath));
 
-  // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
+  // Handle all routes - check for pre-rendered HTML first, then fall back to SPA
+  app.use("*", (req, res) => {
+    const urlPath = req.originalUrl.split("?")[0]; // Remove query string
+
+    // Check if there's a pre-rendered HTML file for this route
+    // e.g., /realestate/first-time-homebuyer-guide -> /realestate/first-time-homebuyer-guide/index.html
+    const prerenderPath = path.join(distPath, urlPath, "index.html");
+
+    if (fs.existsSync(prerenderPath)) {
+      // Serve the pre-rendered static HTML
+      res.sendFile(prerenderPath);
+    } else {
+      // Fall back to SPA's index.html for client-side routing
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
   });
 }
