@@ -1,13 +1,17 @@
 export interface Article {
   id: string;
+  slug: string;
   title: string;
+  metaDescription: string;
   content: string[];
 }
 
 export const realEstateArticles: Article[] = [
   {
     id: "article-1",
+    slug: "first-time-homebuyer-guide",
     title: "First-Time Homebuyer's Guide: 5 Steps to Your Dream Home",
+    metaDescription: "Buying your first home? Learn the 5 essential steps including mortgage pre-approval, defining must-haves, choosing platforms, home inspections, and planning for closing costs.",
     content: [
       "Buying your first home is one of life's most exciting milestones, but it can feel overwhelming without proper guidance. Here's how to navigate the process successfully.",
       "**Start with Your Finances** - Before falling in love with properties, get pre-approved for a mortgage. This shows sellers you're serious and helps you understand your true budget. Check your credit score and aim for at least 620 for conventional loans, though higher scores unlock better interest rates.",
@@ -20,7 +24,9 @@ export const realEstateArticles: Article[] = [
   },
   {
     id: "article-2",
+    slug: "selling-home-fast-strategies",
     title: "Selling Your Home Fast: Proven Strategies for Maximum Value",
+    metaDescription: "Learn proven strategies to sell your home quickly at maximum value including pricing, staging, photography, and timing your listing for success.",
     content: [
       "Whether you're relocating, downsizing, or upgrading, selling your home quickly at the right price requires strategy. Here's what top-performing sellers do differently.",
       "**Price It Right From Day One** - Overpricing is the number one reason homes sit on the market. Work with your agent to analyze comparable sales in your neighborhood from the past 3-6 months. Homes priced competitively often receive multiple offers, driving the final price higher than overpriced listings that eventually need reductions.",
@@ -33,7 +39,9 @@ export const realEstateArticles: Article[] = [
   },
   {
     id: "article-3",
+    slug: "real-estate-market-trends",
     title: "Understanding Real Estate Market Trends: Is Now the Right Time to Buy or Sell?",
+    metaDescription: "Analyze real estate market trends including interest rates, inventory levels, and seasonal patterns to determine the best time to buy or sell your home.",
     content: [
       "The real estate market constantly shifts based on economic factors, interest rates, and local supply and demand. Here's how to read the signals and make informed decisions.",
       "**Interest Rates Impact Affordability** - When mortgage rates are low, buyers can afford more house for the same monthly payment. A 1% rate difference on a $400,000 loan can mean over $200 more per month, affecting what buyers can offer. Monitor Federal Reserve announcements and use rate comparison tools to time your purchase.",
@@ -46,7 +54,9 @@ export const realEstateArticles: Article[] = [
   },
   {
     id: "article-4",
+    slug: "comparing-real-estate-platforms",
     title: "Comparing Real Estate Platforms: How to Choose the Best Service for Your Needs",
+    metaDescription: "Compare real estate platforms like Zillow and Realtor.com. Learn what features to look for in search tools, listing coverage, home value estimates, and agent networks.",
     content: [
       "Not all real estate platforms are created equal. Understanding their differences helps you find homes faster, get better deals, and connect with the right professionals.",
       "**Search Features and User Experience** - The best platforms offer advanced filters beyond basic price and bedrooms. Look for map-based searches, school district filters, commute time calculators, and detailed neighborhood data. Mobile app quality matters too—you'll likely do significant browsing on your phone.",
@@ -59,3 +69,7 @@ export const realEstateArticles: Article[] = [
     ]
   }
 ];
+
+export function getArticleBySlug(slug: string): Article | undefined {
+  return realEstateArticles.find((article) => article.slug === slug);
+}
