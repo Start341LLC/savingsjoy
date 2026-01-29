@@ -127,6 +127,7 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
             headline: "First-Time Homebuyer's Guide: 5 Steps to Your Dream Home",
             description:
               "Buying your first home is one of life's most exciting milestones, but it can feel overwhelming without proper guidance.",
+            url: "https://savingsjoy.com/realestate/first-time-homebuyer-guide",
             author: {
               "@type": "Organization",
               name: "SavingsJoy",
@@ -137,6 +138,7 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
             headline: "Selling Your Home Fast: Proven Strategies for Maximum Value",
             description:
               "Whether you're relocating, downsizing, or upgrading, selling your home quickly at the right price requires strategy.",
+            url: "https://savingsjoy.com/realestate/selling-home-fast-strategies",
             author: {
               "@type": "Organization",
               name: "SavingsJoy",
@@ -148,6 +150,7 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
               "Understanding Real Estate Market Trends: Is Now the Right Time to Buy or Sell?",
             description:
               "The real estate market constantly shifts based on economic factors, interest rates, and local supply and demand.",
+            url: "https://savingsjoy.com/realestate/real-estate-market-trends",
             author: {
               "@type": "Organization",
               name: "SavingsJoy",
@@ -159,6 +162,7 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
               "Comparing Real Estate Platforms: How to Choose the Best Service for Your Needs",
             description:
               "Not all real estate platforms are created equal. Understanding their differences helps you find homes faster and get better deals.",
+            url: "https://savingsjoy.com/realestate/comparing-real-estate-platforms",
             author: {
               "@type": "Organization",
               name: "SavingsJoy",

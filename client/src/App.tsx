@@ -14,6 +14,7 @@ import Contact from "@/pages/Contact";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfUse from "@/pages/TermsOfUse";
 import VerticalPage from "@/pages/VerticalPage";
+import RealEstateArticlePage from "@/pages/RealEstateArticlePage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -32,6 +33,11 @@ function Router() {
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-use" component={TermsOfUse} />
       
+      {/* Real Estate Article pages */}
+      <Route path="/realestate/:slug">
+        {(params) => <RealEstateArticlePage slug={params.slug} />}
+      </Route>
+
       {/* Vertical pages */}
       <Route path="/realestate">
         {() => <VerticalPage slug="realestate" />}
