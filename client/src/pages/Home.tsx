@@ -54,7 +54,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {premiumDomains.map((domain, index) => (
               <div key={domain.name}>
-                <DomainCard domain={domain} />
+                <DomainCard domain={domain} priority={index === 0} />
               </div>
             ))}
           </div>

@@ -3,9 +3,10 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 interface DomainCardProps {
   domain: Domain;
+  priority?: boolean;
 }
 
-export default function DomainCard({ domain }: DomainCardProps) {
+export default function DomainCard({ domain, priority }: DomainCardProps) {
   return (
     <Card className="overflow-hidden" data-testid={`card-domain-${domain.name}`}>
       {domain.imageUrl && (
@@ -14,8 +15,9 @@ export default function DomainCard({ domain }: DomainCardProps) {
             src={domain.imageUrl}
             alt={domain.name}
             className="object-cover w-full h-full"
-            loading="lazy"
-            decoding="async"
+            loading={priority ? "eager" : "lazy"}
+            decoding={priority ? "sync" : "async"}
+            fetchPriority={priority ? "high" : undefined}
             width="600"
             height="400"
           />
