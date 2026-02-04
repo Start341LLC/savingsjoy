@@ -22,6 +22,19 @@ export const verticals: Vertical[] = [
         features: ["Cash offers in days", "No repairs needed", "Close on your timeline"],
       },
       {
+        id: "re-6",
+        companyName: "Rent-To-Own Listings (ROTC)",
+        logoUrl: "https://logo.clearbit.com/renttoownlistings.com",
+        title: "Rent-To-Own Listings - Path to Homeownership",
+        description:
+          "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
+        displayUrl: "renttoownlistings.com",
+        affiliateLink:
+          "https://afflat3d3.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=30155&c=918271&a=747832&k=4C412C961CC577FD6BA1312355DFD005&l=34519",
+        rating: 4.2,
+        features: ["Bad credit accepted", "Flexible terms", "Path to ownership"],
+      },
+      {
         id: "re-1",
         companyName: "Zillow",
         logoUrl: "https://logo.clearbit.com/zillow.com",
@@ -32,19 +45,6 @@ export const verticals: Vertical[] = [
         affiliateLink: "https://www.zillow.com",
         rating: 4.5,
         features: ["Millions of listings", "Home value estimates", "Local market data"],
-      },
-      {
-        id: "re-5",
-        companyName: "Rent-To-Own Listings",
-        logoUrl: "https://logo.clearbit.com/renttoownlistings.com",
-        title: "Rent-To-Own Listings - Path to Homeownership",
-        description:
-          "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
-        displayUrl: "renttoownlistings.com",
-        affiliateLink:
-          "https://cd-down.com/?a=289942&c=416651&co=353281&mt=8&utm_source=clickdealer&utm_medium=contextual&utm_campaign=organic",
-        rating: 4.2,
-        features: ["Bad credit accepted", "Flexible terms", "Path to ownership"],
       },
       {
         id: "re-3",
@@ -58,16 +58,17 @@ export const verticals: Vertical[] = [
         features: ["Low commission rates", "Full-service agents", "Free home tours"],
       },
       {
-        id: "re-4",
-        companyName: "Trulia",
-        logoUrl: "https://logo.clearbit.com/trulia.com",
-        title: "Trulia - Homes for Sale & Real Estate",
+        id: "re-5",
+        companyName: "Trusted Home Offers",
+        logoUrl: "https://logo.clearbit.com/trustedhomeoffers.com",
+        title: "Trusted Home Offers - Free Home Value Estimate",
         description:
-          "Discover homes for sale with detailed neighborhood insights, school ratings, and local amenities.",
-        displayUrl: "trulia.com",
-        affiliateLink: "https://www.trulia.com",
-        rating: 4.2,
-        features: ["Neighborhood insights", "School ratings", "Crime maps"],
+          "Find out how much your house is worth. Get a real-world value estimate in less than 2 minutes with no obligation.",
+        displayUrl: "trustedhomeoffers.com",
+        affiliateLink:
+          "https://cd-down.com/?a=289942&c=416651&co=353281&mt=8&utm_source=clickdealer&utm_medium=contextual&utm_campaign=organic",
+        rating: 4.1,
+        features: ["Free home valuation", "Quick 2-minute estimate", "No obligation"],
       },
     ],
   },
