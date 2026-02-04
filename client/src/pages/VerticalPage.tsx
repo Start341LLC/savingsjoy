@@ -14,6 +14,10 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
   const vertical = verticals.find((v) => v.slug === slug);
 
   useEffect(() => {
+    let script: HTMLScriptElement | null = null;
+    let idleId: number | undefined;
+
+    const injectLd = () => {
     let ldData: Record<string, unknown> | null = null;
 
     if (slug === "realestate") {
@@ -825,13 +829,25 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
 
     if (!ldData) return;
 
-    const script = document.createElement("script");
+    script = document.createElement("script");
     script.type = "application/ld+json";
     script.textContent = JSON.stringify(ldData);
     document.head.appendChild(script);
+    };
+
+    if ('requestIdleCallback' in window) {
+      idleId = window.requestIdleCallback(injectLd);
+    } else {
+      setTimeout(injectLd, 100);
+    }
 
     return () => {
-      document.head.removeChild(script);
+      if (idleId !== undefined && 'cancelIdleCallback' in window) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (script && script.parentNode) {
+        document.head.removeChild(script);
+      }
     };
   }, [slug]);
 
