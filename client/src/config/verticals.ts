@@ -47,19 +47,6 @@ export const verticals: Vertical[] = [
         features: ["Millions of listings", "Home value estimates", "Local market data"],
       },
       {
-        id: "re-5",
-        companyName: "Rent-To-Own Listings",
-        logoUrl: "https://logo.clearbit.com/renttoownlistings.com",
-        title: "Rent-To-Own Listings - Path to Homeownership",
-        description:
-          "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
-        displayUrl: "renttoownlistings.com",
-        affiliateLink:
-          "https://cd-down.com/?a=289942&c=416651&co=353281&mt=8&utm_source=clickdealer&utm_medium=contextual&utm_campaign=organic",
-        rating: 4.2,
-        features: ["Bad credit accepted", "Flexible terms", "Path to ownership"],
-      },
-      {
         id: "re-3",
         companyName: "Redfin",
         logoUrl: "https://logo.clearbit.com/redfin.com",
@@ -69,6 +56,19 @@ export const verticals: Vertical[] = [
         affiliateLink: "https://www.redfin.com",
         rating: 4.6,
         features: ["Low commission rates", "Full-service agents", "Free home tours"],
+      },
+      {
+        id: "re-5",
+        companyName: "Trusted Home Offers",
+        logoUrl: "https://logo.clearbit.com/trustedhomeoffers.com",
+        title: "Trusted Home Offers - Free Home Value Estimate",
+        description:
+          "Find out how much your house is worth. Get a real-world value estimate in less than 2 minutes with no obligation.",
+        displayUrl: "trustedhomeoffers.com",
+        affiliateLink:
+          "https://cd-down.com/?a=289942&c=416651&co=353281&mt=8&utm_source=clickdealer&utm_medium=contextual&utm_campaign=organic",
+        rating: 4.1,
+        features: ["Free home valuation", "Quick 2-minute estimate", "No obligation"],
       },
     ],
   },
