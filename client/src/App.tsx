@@ -1,5 +1,5 @@
 import { Route, Switch, useLocation } from "wouter";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -10,12 +10,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import Home from "@/pages/Home";
-import Contact from "@/pages/Contact";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
-import TermsOfUse from "@/pages/TermsOfUse";
-import VerticalPage from "@/pages/VerticalPage";
-import RealEstateArticlePage from "@/pages/RealEstateArticlePage";
-import NotFound from "@/pages/not-found";
+
+const Contact = lazy(() => import("@/pages/Contact"));
+const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
+const TermsOfUse = lazy(() => import("@/pages/TermsOfUse"));
+const VerticalPage = lazy(() => import("@/pages/VerticalPage"));
+const RealEstateArticlePage = lazy(() => import("@/pages/RealEstateArticlePage"));
+const NotFound = lazy(() => import("@/pages/not-found"));
 
 function Router() {
   // Track page views when routes change
@@ -94,7 +95,9 @@ function App() {
         </a>
         <Header />
         <main id="main-content" role="main" className="min-h-screen">
-          <Router />
+          <Suspense fallback={<div className="min-h-screen" />}>
+            <Router />
+          </Suspense>
         </main>
         <Footer />
         <Toaster />

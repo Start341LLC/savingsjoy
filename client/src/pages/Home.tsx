@@ -31,10 +31,10 @@ export default function Home() {
         data-testid="section-hero"
       >
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold font-display text-foreground tracking-tight mb-2 animate-fade-in-up">
+          <h1 className="text-3xl md:text-4xl font-bold font-display text-foreground tracking-tight mb-2">
             Smart Domains. Joyful Deals.
           </h1>
-          <p className="text-base text-muted-foreground animate-fade-in animate-delay-200">
+          <p className="text-base text-muted-foreground">
             Premium domain portfolio driving digital success
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {premiumDomains.map((domain, index) => (
-              <div key={domain.name} className={`animate-scale-in animate-delay-${Math.min(index + 1, 4)}00`}>
+              <div key={domain.name}>
                 <DomainCard domain={domain} />
               </div>
             ))}
@@ -108,7 +108,7 @@ export default function Home() {
             {verticals.map((vertical, index) => {
               const Icon = verticalIcons[vertical.slug as keyof typeof verticalIcons] || TrendingUp;
               return (
-                <Card key={vertical.slug} className={`hover-elevate transition-all duration-200 h-full animate-scale-in animate-delay-${Math.min((index % 6) + 1, 6)}00`} data-testid={`card-vertical-${vertical.slug}`}>
+                <Card key={vertical.slug} className="hover-elevate transition-all duration-200 h-full" data-testid={`card-vertical-${vertical.slug}`}>
                   <CardHeader className="pb-3">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
                       <Icon size={20} className="text-primary" />

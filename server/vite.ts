@@ -76,8 +76,12 @@ export function serveStatic(app: Express) {
     );
   }
 
-  // Serve static assets (JS, CSS, images, etc.)
-  app.use(express.static(distPath));
+  // Serve static assets (JS, CSS, images, etc.) with caching
+  app.use(express.static(distPath, {
+    maxAge: '1y',
+    immutable: true,
+    etag: true,
+  }));
 
   // Handle all routes - check for pre-rendered HTML first, then fall back to SPA
   app.use("*", (req, res) => {
