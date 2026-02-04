@@ -22,6 +22,19 @@ export const verticals: Vertical[] = [
         features: ["Cash offers in days", "No repairs needed", "Close on your timeline"],
       },
       {
+        id: "re-6",
+        companyName: "Rent-To-Own Listings (ROTC)",
+        logoUrl: "https://logo.clearbit.com/renttoownlistings.com",
+        title: "Rent-To-Own Listings - Path to Homeownership",
+        description:
+          "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
+        displayUrl: "renttoownlistings.com",
+        affiliateLink:
+          "https://afflat3d3.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=30155&c=918271&a=747832&k=4C412C961CC577FD6BA1312355DFD005&l=34519",
+        rating: 4.2,
+        features: ["Bad credit accepted", "Flexible terms", "Path to ownership"],
+      },
+      {
         id: "re-1",
         companyName: "Zillow",
         logoUrl: "https://logo.clearbit.com/zillow.com",
@@ -56,18 +69,6 @@ export const verticals: Vertical[] = [
         affiliateLink: "https://www.redfin.com",
         rating: 4.6,
         features: ["Low commission rates", "Full-service agents", "Free home tours"],
-      },
-      {
-        id: "re-4",
-        companyName: "Trulia",
-        logoUrl: "https://logo.clearbit.com/trulia.com",
-        title: "Trulia - Homes for Sale & Real Estate",
-        description:
-          "Discover homes for sale with detailed neighborhood insights, school ratings, and local amenities.",
-        displayUrl: "trulia.com",
-        affiliateLink: "https://www.trulia.com",
-        rating: 4.2,
-        features: ["Neighborhood insights", "School ratings", "Crime maps"],
       },
     ],
   },
