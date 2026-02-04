@@ -105,7 +105,7 @@ export function CookieConsentBanner({ onAnalyticsAllowed }: CookieConsentBannerP
             >
               We use cookies to analyze site traffic and improve your experience.
               <a href="/privacy-policy" className="ml-1 text-[#0066cc] underline">
-                Learn more
+                Learn more in our privacy policy
               </a>
             </p>
           </div>

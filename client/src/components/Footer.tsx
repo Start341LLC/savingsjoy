@@ -150,7 +150,7 @@ export default function Footer() {
                 href={siteConfig.companyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
+                className="text-primary underline hover:no-underline"
                 data-testid="link-company"
               >
                 {siteConfig.company}
