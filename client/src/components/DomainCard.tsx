@@ -14,6 +14,10 @@ export default function DomainCard({ domain }: DomainCardProps) {
             src={domain.imageUrl}
             alt={domain.name}
             className="object-cover w-full h-full"
+            loading="lazy"
+            decoding="async"
+            width="600"
+            height="400"
           />
         </div>
       )}
