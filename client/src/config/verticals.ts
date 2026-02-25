@@ -44,19 +44,6 @@ export const verticals: Vertical[] = [
         rating: 4.6,
         features: ["Low commission rates", "Full-service agents", "Free home tours"],
       },
-      {
-        id: "re-5",
-        companyName: "Trusted Home Offers",
-        logoUrl: "https://logo.clearbit.com/trustedhomeoffers.com",
-        title: "Trusted Home Offers - Free Home Value Estimate",
-        description:
-          "Find out how much your house is worth. Get a real-world value estimate in less than 2 minutes with no obligation.",
-        displayUrl: "trustedhomeoffers.com",
-        affiliateLink:
-          "https://cd-down.com/?a=289942&c=416651&co=353281&mt=8&utm_source=clickdealer&utm_medium=contextual&utm_campaign=organic",
-        rating: 4.1,
-        features: ["Free home valuation", "Quick 2-minute estimate", "No obligation"],
-      },
     ],
   },
   {
