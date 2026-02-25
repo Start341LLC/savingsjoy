@@ -41,27 +41,11 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
           "@type": "ItemList",
           name: "Top Real Estate Service Providers",
           description: "Compare leading real estate platforms and services",
-          numberOfItems: 5,
+          numberOfItems: 4,
           itemListElement: [
             {
               "@type": "ListItem",
               position: 1,
-              item: {
-                "@type": "Service",
-                name: "Liz Buys Houses - Sell Fast for Cash",
-                description:
-                  "Get a fair cash offer for your house in days. Skip repairs, agent fees, and lengthy listings with a quick closing timeline.",
-                provider: {
-                  "@type": "Organization",
-                  name: "Liz Buys Houses",
-                },
-                category: "Cash Home Buying",
-                url: "https://lizbuyshouses.net",
-              },
-            },
-            {
-              "@type": "ListItem",
-              position: 2,
               item: {
                 "@type": "Service",
                 name: "Zillow - Find Your Dream Home",
@@ -77,7 +61,7 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
             },
             {
               "@type": "ListItem",
-              position: 3,
+              position: 2,
               item: {
                 "@type": "Service",
                 name: "Rent-To-Own Listings - Path to Homeownership",
@@ -93,7 +77,7 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
             },
             {
               "@type": "ListItem",
-              position: 4,
+              position: 3,
               item: {
                 "@type": "Service",
                 name: "Redfin - Buy & Sell Real Estate",
@@ -109,7 +93,7 @@ export default function VerticalPage({ slug }: VerticalPageProps) {
             },
             {
               "@type": "ListItem",
-              position: 5,
+              position: 4,
               item: {
                 "@type": "Service",
                 name: "Trulia - Homes for Sale & Real Estate",
