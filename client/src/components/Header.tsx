@@ -2,9 +2,7 @@ import { Link } from "wouter";
 import { siteConfig } from "@/config/site";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-// Stable public path so the browser can discover this via <link rel="preload"> in
-// index.html without needing JavaScript to execute first.
-const pigMascot = "/pig-mascot.webp";
+import pigMascot from "@assets/generated_images/Pink_pig_mascot_logo_5c51842d.webp";
 import { Button } from "@/components/ui/button";
 
 export default function Header() {
