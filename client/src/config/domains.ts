@@ -1,32 +1,30 @@
 import { Domain } from "@shared/schema";
-import apartmentRentalImg from "@assets/generated_images/Apartment_rental_domain_thumbnail_13b36437.webp";
-import incomeTaxImg from "@assets/generated_images/Income_tax_domain_thumbnail_0fae0d98.webp";
-import partyRentalsImg from "@assets/generated_images/Party_rentals_domain_thumbnail_f4bc630d.webp";
-import trainScheduleImg from "@assets/generated_images/Train_schedule_domain_thumbnail_58731284.webp";
 
+// Images live in /public for stable, hash-free URLs. This lets index.html
+// preload them with <link rel="preload"> without the path drifting on every build.
 export const premiumDomains: Domain[] = [
   {
     name: "ApartmentRental.com",
     description: "Premium domain for apartment rental listings and property management services",
     category: "Real Estate",
-    imageUrl: apartmentRentalImg
+    imageUrl: "/domain-apartment-rental.webp"
   },
   {
     name: "IncomeTax.com",
     description: "Authoritative domain for tax preparation, filing services, and tax advice",
     category: "Finance",
-    imageUrl: incomeTaxImg
+    imageUrl: "/domain-income-tax.webp"
   },
   {
     name: "PartyRentals.com",
     description: "Premier destination for party equipment, event rentals, and celebration supplies",
     category: "Events",
-    imageUrl: partyRentalsImg
+    imageUrl: "/domain-party-rentals.webp"
   },
   {
     name: "TrainSchedule.com",
     description: "Essential resource for train schedules, railway timetables, and transit information",
     category: "Transportation",
-    imageUrl: trainScheduleImg
+    imageUrl: "/domain-train-schedule.webp"
   },
 ];
