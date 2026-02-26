@@ -1,7 +1,8 @@
 import { Link } from "wouter";
 import { siteConfig } from "@/config/site";
-import pigMascot from "@assets/generated_images/Pink_pig_mascot_logo_5c51842d.webp";
 import { trackEvent } from "@/lib/analytics";
+
+const pigMascot = "/pig-mascot.webp";
 
 const trackFooterLink = (label: string) => {
   trackEvent('footer_click', 'Footer Navigation', label);
