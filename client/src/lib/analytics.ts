@@ -28,9 +28,10 @@ export const initGA = () => {
     return;
   }
 
-  // Add Google Analytics script to the head
+  // Add Google Analytics script to the head - async so it never blocks rendering
   const script1 = document.createElement('script');
   script1.async = true;
+  script1.defer = true;
   script1.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
   document.head.appendChild(script1);
 
