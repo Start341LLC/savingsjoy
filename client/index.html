@@ -11,7 +11,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="shortcut icon" href="/favicon.png" />
     
-    <link rel="preload" as="image" href="/assets/Apartment_rental_domain_thumbnail_13b36437-BQD3Dt_X.webp" fetchpriority="high">
+    <!-- LCP image: first domain card thumbnail. Stable /public path — no build-hash drift. -->
+    <link rel="preload" as="image" href="/domain-apartment-rental.webp" fetchpriority="high">
+    <!-- Remaining above-fold thumbnails (all four cards visible on lg screens) -->
+    <link rel="preload" as="image" href="/domain-income-tax.webp">
+    <link rel="preload" as="image" href="/domain-party-rentals.webp">
+    <link rel="preload" as="image" href="/domain-train-schedule.webp">
+    <!-- Header logo: stable public path so the browser can preload without waiting for JS -->
+    <link rel="preload" as="image" href="/pig-mascot.webp">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://logo.clearbit.com">

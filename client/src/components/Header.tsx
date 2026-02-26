@@ -2,8 +2,10 @@ import { Link } from "wouter";
 import { siteConfig } from "@/config/site";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import pigMascot from "@assets/generated_images/Pink_pig_mascot_logo_5c51842d.webp";
 import { Button } from "@/components/ui/button";
+
+// Stable /public path — lets index.html preload this without waiting for JS.
+const pigMascot = "/pig-mascot.webp";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
