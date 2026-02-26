@@ -11,7 +11,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="shortcut icon" href="/favicon.png" />
     
+    <!-- LCP image: first domain card. Path contains Vite content-hash; update if the source
+         image changes (Vite will regenerate the hash and the build will break the old preload).
+         Alternatively, move domain thumbnails to /public for stable paths. -->
     <link rel="preload" as="image" href="/assets/Apartment_rental_domain_thumbnail_13b36437-BQD3Dt_X.webp" fetchpriority="high">
+    <!-- Header logo: stable public path so the browser can preload without waiting for JS -->
+    <link rel="preload" as="image" href="/pig-mascot.webp">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://logo.clearbit.com">
