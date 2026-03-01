@@ -9,17 +9,17 @@ export const verticals: Vertical[] = [
       "Search millions of homes for sale and rent. Compare real estate listing sites, get free home valuations, and connect with local agents near you.",
     offers: [
       {
-        id: "re-6",
-        companyName: "Rent-To-Own Listings (ROTC)",
-        logoUrl: "https://logo.clearbit.com/renttoownlistings.com",
-        title: "Rent-To-Own Listings - Path to Homeownership",
+        id: "re-7",
+        companyName: "RentOwnHomeListings.com",
+        logoUrl: "https://logo.clearbit.com/rentownhomelistings.com",
+        title: "RentOwnHomeListings.com - Rent-to-Own & Foreclosure Homes",
         description:
-          "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
-        displayUrl: "renttoownlistings.com",
+          "Find rent-to-own homes, lease options, foreclosures and more. Start putting money towards a home that will be yours!",
+        displayUrl: "rentownhomelistings.com",
         affiliateLink:
-          "https://afflat3d3.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=30155&c=918271&a=747832&k=4C412C961CC577FD6BA1312355DFD005&l=34519",
-        rating: 4.2,
-        features: ["Bad credit accepted", "Flexible terms", "Path to ownership"],
+          "https://afflat3d2.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=9520&c=918277&a=747832&k=5DF6F6A8ECA69C9B28366F29DF3F216B&l=9052",
+        rating: 4.4,
+        features: ["Rent-to-own homes", "Foreclosure listings", "Lease options"],
       },
       {
         id: "re-1",
@@ -34,6 +34,19 @@ export const verticals: Vertical[] = [
         features: ["Millions of listings", "Home value estimates", "Local market data"],
       },
       {
+        id: "re-6",
+        companyName: "Rent-To-Own Listings (ROTC)",
+        logoUrl: "https://logo.clearbit.com/renttoownlistings.com",
+        title: "Rent-To-Own Listings - Path to Homeownership",
+        description:
+          "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
+        displayUrl: "renttoownlistings.com",
+        affiliateLink:
+          "https://afflat3d3.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=30155&c=918271&a=747832&k=4C412C961CC577FD6BA1312355DFD005&l=34519",
+        rating: 4.2,
+        features: ["Bad credit accepted", "Flexible terms", "Path to ownership"],
+      },
+      {
         id: "re-3",
         companyName: "Redfin",
         logoUrl: "https://logo.clearbit.com/redfin.com",
@@ -43,6 +56,18 @@ export const verticals: Vertical[] = [
         affiliateLink: "https://www.redfin.com",
         rating: 4.6,
         features: ["Low commission rates", "Full-service agents", "Free home tours"],
+      },
+      {
+        id: "re-4",
+        companyName: "Homes.com",
+        logoUrl: "https://logo.clearbit.com/homes.com",
+        title: "Homes.com - Search Homes for Sale & Rent",
+        description:
+          "Browse millions of homes for sale and rent with detailed property info, photos, and neighborhood insights. Find your perfect home today.",
+        displayUrl: "homes.com",
+        affiliateLink: "https://www.homes.com",
+        rating: 4.3,
+        features: ["Detailed property info", "Neighborhood insights", "Easy search tools"],
       },
     ],
   },
