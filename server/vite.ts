@@ -87,6 +87,16 @@ export function serveStatic(app: Express) {
   app.use("*", (req, res) => {
     const urlPath = req.originalUrl.split("?")[0]; // Remove query string
 
+    // For the homepage, serve the pre-rendered home.html if available.
+    // This gives the browser real content immediately — no waiting for React.
+    if (urlPath === "/" || urlPath === "") {
+      const homepagePath = path.join(distPath, "home.html");
+      if (fs.existsSync(homepagePath)) {
+        return res.sendFile(homepagePath);
+      }
+      return res.sendFile(path.resolve(distPath, "index.html"));
+    }
+
     // Check if there's a pre-rendered HTML file for this route
     // e.g., /realestate/first-time-homebuyer-guide -> /realestate/first-time-homebuyer-guide/index.html
     const prerenderPath = path.join(distPath, urlPath, "index.html");
