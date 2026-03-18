@@ -9,6 +9,19 @@ export const verticals: Vertical[] = [
       "Search millions of homes for sale and rent. Compare real estate listing sites, get free home valuations, and connect with local agents near you.",
     offers: [
       {
+        id: "re-7",
+        companyName: "RentOwnHomeListings.com",
+        logoUrl: "https://logo.clearbit.com/rentownhomelistings.com",
+        title: "RentOwnHomeListings.com - Rent-to-Own & Foreclosure Homes",
+        description:
+          "Find rent-to-own homes, lease options, foreclosures and more. Start putting money towards a home that will be yours!",
+        displayUrl: "rentownhomelistings.com",
+        affiliateLink:
+          "https://afflat3d2.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=9520&c=918277&a=747832&k=5DF6F6A8ECA69C9B28366F29DF3F216B&l=9052",
+        rating: 4.4,
+        features: ["Rent-to-own homes", "Foreclosure listings", "Lease options"],
+      },
+      {
         id: "re-8",
         companyName: "BuyDistressed.com",
         logoUrl: "https://logo.clearbit.com/buydistressed.com",
@@ -45,19 +58,6 @@ export const verticals: Vertical[] = [
           "https://afflat3d3.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=30155&c=918271&a=747832&k=4C412C961CC577FD6BA1312355DFD005&l=34519",
         rating: 4.2,
         features: ["Bad credit accepted", "Flexible terms", "Path to ownership"],
-      },
-      {
-        id: "re-7",
-        companyName: "RentOwnHomeListings.com",
-        logoUrl: "https://logo.clearbit.com/rentownhomelistings.com",
-        title: "RentOwnHomeListings.com - Rent-to-Own & Foreclosure Homes",
-        description:
-          "Find rent-to-own homes, lease options, foreclosures and more. Start putting money towards a home that will be yours!",
-        displayUrl: "rentownhomelistings.com",
-        affiliateLink:
-          "https://afflat3d2.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=9520&c=918277&a=747832&k=5DF6F6A8ECA69C9B28366F29DF3F216B&l=9052",
-        rating: 4.4,
-        features: ["Rent-to-own homes", "Foreclosure listings", "Lease options"],
       },
       {
         id: "re-3",
