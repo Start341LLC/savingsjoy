@@ -9,19 +9,6 @@ export const verticals: Vertical[] = [
       "Search millions of homes for sale and rent. Compare real estate listing sites, get free home valuations, and connect with local agents near you.",
     offers: [
       {
-        id: "re-6",
-        companyName: "Rent-To-Own Listings (ROTC)",
-        logoUrl: "https://logo.clearbit.com/renttoownlistings.com",
-        title: "Rent-To-Own Listings - Path to Homeownership",
-        description:
-          "Find rent-to-own homes in your area. Bad credit? No problem. Explore flexible options to become a homeowner with limited availability.",
-        displayUrl: "renttoownlistings.com",
-        affiliateLink:
-          "https://afflat3d3.com/trk/lnk/EEE9DFAF-CB8C-4563-90BE-F106EE5F970B/?o=30155&c=918271&a=747832&k=4C412C961CC577FD6BA1312355DFD005&l=34519",
-        rating: 4.2,
-        features: ["Bad credit accepted", "Flexible terms", "Path to ownership"],
-      },
-      {
         id: "re-8",
         companyName: "BuyDistressed.com",
         logoUrl: "https://logo.clearbit.com/buydistressed.com",
