@@ -9,6 +9,18 @@ export const verticals: Vertical[] = [
       "Search millions of homes for sale and rent. Compare real estate listing sites, get free home valuations, and connect with local agents near you.",
     offers: [
       {
+        id: "re-0",
+        companyName: "Trusted Home Offers",
+        logoUrl: "https://logo.clearbit.com/ocuwege.com",
+        title: "Trusted Home Offers - Get a Fast Cash Offer on Your Home",
+        description:
+          "Skip the hassle of listings and showings. Get a competitive cash offer on your home from trusted buyers and close on your timeline.",
+        displayUrl: "ocuwege.com",
+        affiliateLink: "https://www.ocuwege.com/3621638bbf5052161ee5aaa654f0c120e0540395-0-0-0/",
+        rating: 4.7,
+        features: ["Fast cash offers", "No showings or repairs", "Close on your timeline"],
+      },
+      {
         id: "re-8",
         companyName: "BuyDistressed.com",
         logoUrl: "https://logo.clearbit.com/buydistressed.com",
